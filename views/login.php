@@ -98,10 +98,7 @@ if (login_check($mysqli) == true) {
 						<form action="login/pro_login" method="post">
 							<input type="text" placeholder="نام کاربری" name="login_user" id="login_user"/>
 							<input type="text" placeholder="رمز عبور" name="login_pass" id="login_pass"/>
-							<span>
-								<input type="checkbox" class="checkbox" style="float: right">
-                                         ماندن در حالت ورود
-							</span>
+							
 							<button type="submit" class="btn btn-default" style="width:100px;">ورود</button>
 						</form>
 					</div><!--/login form-->
