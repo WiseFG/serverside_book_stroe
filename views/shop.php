@@ -324,8 +324,6 @@ include_once 'includes/functions.php';
 						
 					</div><!--features_items-->
 					
-					
-					
 					<div class="recommended_items"><!--recommended_items-->
 						
 						
@@ -340,9 +338,31 @@ include_once 'includes/functions.php';
 						</div>
 					</div><!--/recommended_items-->
 					
+				<div class="shopper-info" style="float: right; direction: rtl;">
+                            <form>
+                                <input type="name" placeholder="نام کتاب">
+                                <input type="author" placeholder="نام نویسنده">
+                                <input type="publish_year" placeholder="سال انتشار">
+                                <input type="publisher" placeholder="نام انتشارات">
+                                    <select>
+                                        <option>-- دسته بندی --</option>
+                                        <option>آموزشی</option>
+                                        <option>پژوهشی</option>
+                                        <option>ادبیات</option>
+                                        <option>کودک و نوجوان</option>
+                                        <option>تاریخی</option>
+                                        <option>سلامت</option>
+                                        <option>رمان</option>
+                                    </select>
+                                  <a class="btn btn-primary" href="" style="margin-right: 40px;">اضافه کردن کتاب</a>
+                            </form>
+                        </div>
 				</div>
+			
 			</div>
+		
 		</div>
+		
 	</section>
 	
 	<footer id="footer"><!--Footer-->
