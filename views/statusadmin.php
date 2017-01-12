@@ -97,10 +97,11 @@ include_once 'includes/functions.php';
             				</div>
 							
 							<form>
-                                <select style="height:39px;">
+                                <select id="invoiceID" style="height:39px; margin-bottom: 10px;">
                                     <option>-- کد رهگیری --</option>
                                 </select>
-                                
+                                <a class="btn btn-default update" style="width: 100%;
+                                            font-weight: 300;padding: 10px; margin-top: 0px;">نمایش اطلاعات</a>
                         
 							</form>
                             
@@ -272,7 +273,30 @@ include_once 'includes/functions.php';
         
     </footer><!--/Footer-->
 
-	
+	 <script type="text/javascript">
+      
+  window.onload = function (){
+    loadInfo();
+  } 
+  function loadInfo()
+  {
+     $.post('Statusadmin/select',
+      function(data) {
+      for(int i=0; i<data.size; i++)
+      {
+        var selectInvoiceID = document.getElementById("invoiceID");
+        var option = document.createElement("option");
+        option.text = data[i];
+        selectInvoiceID.add(option);
+      }
+      
+     }, "json");
+
+  }
+ 
+  
+  
+  </script>
 
 
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
@@ -282,3 +306,5 @@ include_once 'includes/functions.php';
     <script src="<?php echo base_url();?>assets/js/main.js"></script>
 </body>
 </html>
+
+
