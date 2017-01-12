@@ -22,4 +22,9 @@ class Statusadmin extends CI_Controller {
 	{
 		$this->load->view('statusadmin');
 	}
+	public function select()
+	{
+		$this->load->model('StatusadminModel');
+		$res=$this->StatusadminModel->loadInfo();
+	}
 }
