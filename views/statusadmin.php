@@ -110,10 +110,16 @@ include_once 'includes/functions.php';
                         <div class="bill-to">
                             <div class="shopper-info">
                                 <form>
-                                    <input type="text" placeholder="وضعیت">
-                                    <input type="text" placeholder="مکان">
+                                    <select style="height:39px; margin-bottom: 10px; margin-top: 44px;">
+                                        <option>-- وضعیت --</option>
+                                        <option>در حال بررسی</option>
+                                        <option>آماده ارسال</option>
+                                        <option>ارسال شده</option>
+                                        <option>تحویل داده شده</option>
+                                    </select>
+                                    <input type="text" style="margin-bottom: 10px;" placeholder="مکان">
                                         <a class="btn btn-default update" style="width: 100%;
-                                            font-weight: 300;padding: 10px;">بروزرسانی وضعیت و مکان</a>
+                                            font-weight: 300;padding: 10px; margin-top: 0px;">بروزرسانی وضعیت و مکان</a>
                                 </form>
                             </div>
                         </div>
