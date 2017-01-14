@@ -31,8 +31,17 @@ class Statusadmin extends CI_Controller {
 	public function loadInfo()
 	{
 		$invoiceID=$this->input->post('invoiceID');
-		
+
 		$this->load->model('StatusadminModel');
 		$res=$this->StatusadminModel->loadInfo($invoiceID);
+	}
+	public function update()
+	{
+		$place=$this->input->post('place');
+		$status=$this->input->post('status');
+		
+	
+		$this->load->model('StatusadminModel');
+		$res=$this->StatusadminModel->updateInfo($place,$status);
 	}
 }
