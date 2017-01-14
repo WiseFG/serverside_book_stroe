@@ -22,9 +22,17 @@ class Statusadmin extends CI_Controller {
 	{
 		$this->load->view('statusadmin');
 	}
-	public function select()
+	public function loadInvoiceID()
 	{
 		$this->load->model('StatusadminModel');
-		$res=$this->StatusadminModel->loadInfo();
+		$res=$this->StatusadminModel->loadInvoiceID();
+	}
+
+	public function loadInfo()
+	{
+		$invoiceID=$this->input->post('invoiceID');
+		
+		$this->load->model('StatusadminModel');
+		$res=$this->StatusadminModel->loadInfo($invoiceID);
 	}
 }
