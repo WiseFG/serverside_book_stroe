@@ -30,10 +30,12 @@ class Login extends CI_Controller {
 		$this->load->model('LoginModel');
 		$res=$this->LoginModel->registration($form_data);
 		if($res)
-			$this->load->view('home');	
+		{
+			 redirect('home', 'refresh');	
+		}
 		else
 		{
-			$this->load->view('login');	
+			redirect('login', 'refresh');	
 		}
 
 	}
