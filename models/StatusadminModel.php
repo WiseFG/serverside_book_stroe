@@ -13,7 +13,6 @@ class StatusadminModel extends CI_Model
 		$sql = "SELECT id FROM `invoice`
 			 WHERE `delivered` =".$zero ;
     	$result = $this->db->query($sql);
-    	$post[0]["invoiceID"]="dddd";
     	$i = 0;
     	foreach($result->result() as $rows)
     	{
@@ -51,5 +50,11 @@ class StatusadminModel extends CI_Model
     
     	echo json_encode($post);
 	}
+
+    function updateInfo($place,$status)
+    {
+        $sql='UPDATE invoice SET  place = "'.$place.'" ,status = "'.$status.'"'; 
+        $result = $this->db->query($sql);
+    }
 }
 ?>
