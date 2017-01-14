@@ -169,22 +169,22 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="<?php echo base_url();?>assets/images/home/product1.jpg" alt="" >
-											<h2>44 تومان</h2>
-											<p>نام کتاب</p>
+											<img id="photo0" src="">
+											<h2><label id="price0"></label></h2>
+											<p><label id="name0"></label></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details.html"><h3>توضیحات بیشتر</h3></a>
-												<p>نویسنده :</p>
-												<p>ناشر :</p>
-												<p>سال چاپ :</p>
-												<p>خلاصه :</p>
+												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<p>نویسنده : <label id="writer0"></label></p>
+												<p>ناشر : <label id="publisher0"></label></p>
+												<p>سال چاپ : <label id="publishedDate0"></label></p>
+												<p>خلاصه : <label id="description0"></label></p>
 												</div>
-												<h2>44 تومان</h2>
-												<p>نام کتاب</p>
+												<h2><label id="price0"></label></h2>
+												<p><label id="name0"></label></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
@@ -195,25 +195,25 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products" >
 									<div class="productinfo text-center">
-										<img src="<?php echo base_url();?>assets/images/home/product2.jpg" alt="" >
-											<h2>44 تومان</h2>
-											<p>نام کتاب</p>
+											<img id="photo1" src="">
+											<h2><label id="price1"></label></h2>
+											<p><label id="name1"></label></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details.html"><h3>توضیحات بیشتر</h3></a>
-												<p>نویسنده :</p>
-												<p>ناشر :</p>
-												<p>سال چاپ :</p>
-												<p>خلاصه :</p>
+												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<p>نویسنده : <label id="writer1"></label></p>
+												<p>ناشر : <label id="publisher1"></label></p>
+												<p>سال چاپ : <label id="publishedDate1"></label></p>
+												<p>خلاصه : <label id="description1"></label></p>
 												</div>
-												<h2>44 تومان</h2>
-												<p>نام کتاب</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<h2><label id="price1"></label></h2>
+												<p><label id="name1"></label></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											</div>
 										</div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -221,25 +221,25 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="<?php echo base_url();?>assets/images/home/product3.jpg" alt="" >
-											<h2>44 تومان</h2>
-											<p>نام کتاب</p>
+											<img id="photo2" src="">
+											<h2><label id="price2"></label></h2>
+											<p><label id="name2"></label></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details.html"><h3>توضیحات بیشتر</h3></a>
-												<p>نویسنده :</p>
-												<p>ناشر :</p>
-												<p>سال چاپ :</p>
-												<p>خلاصه :</p>
+												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<p>نویسنده : <label id="writer2"></label></p>
+												<p>ناشر : <label id="publisher2"></label></p>
+												<p>سال چاپ : <label id="publishedDate2"></label></p>
+												<p>خلاصه : <label id="description2"></label></p>
 												</div>
-												<h2>44 تومان</h2>
-												<p>نام کتاب</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<h2><label id="price2"></label></h2>
+												<p><label id="name2"></label></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											</div>
 										</div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -247,26 +247,25 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="<?php echo base_url();?>assets/images/home/product4.jpg" alt="" >
-											<h2>44 تومان</h2>
-											<p>نام کتاب</p>
+											<img id="photo0" src="">
+											<h2><label id="price3"></label></h2>
+											<p><label id="name3"></label></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details.html"><h3>توضیحات بیشتر</h3></a>
-												<p>نویسنده :</p>
-												<p>ناشر :</p>
-												<p>سال چاپ :</p>
-												<p>خلاصه :</p>
+												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<p>نویسنده : <label id="writer3"></label></p>
+												<p>ناشر : <label id="publisher3"></label></p>
+												<p>سال چاپ : <label id="publishedDate3"></label></p>
+												<p>خلاصه : <label id="description3"></label></p>
 												</div>
-												<h2>44 تومان</h2>
-												<p>نام کتاب</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<h2><label id="price3"></label></h2>
+												<p><label id="name3"></label></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											</div>
 										</div>
-									</div>
-									<img src="images/home/new.png" class="new" alt="">
 								</div>
 							</div>
 						</div>
@@ -274,26 +273,25 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="<?php echo base_url();?>assets/images/home/product5.jpg" alt="" >
-											<h2>44 تومان</h2>
-											<p>نام کتاب</p>
+											<img id="photo4" src="">
+											<h2><label id="price4"></label></h2>
+											<p><label id="name4"></label></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details.html"><h3>توضیحات بیشتر</h3></a>
-												<p>نویسنده :</p>
-												<p>ناشر :</p>
-												<p>سال چاپ :</p>
-												<p>خلاصه :</p>
+												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<p>نویسنده : <label id="writer4"></label></p>
+												<p>ناشر : <label id="publisher4"></label></p>
+												<p>سال چاپ : <label id="publishedDate4"></label></p>
+												<p>خلاصه : <label id="description4"></label></p>
 												</div>
-												<h2>44 تومان</h2>
-												<p>نام کتاب</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<h2><label id="price4"></label></h2>
+												<p><label id="name4"></label></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											</div>
 										</div>
-									</div>
-									<img src="<?php echo base_url();?>assets/images/home/sale.png" class="new" alt="">
 								</div>
 							</div>
 						</div>
@@ -301,25 +299,25 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="<?php echo base_url();?>assets/images/home/product6.jpg" alt="" >
-											<h2>44 تومان</h2>
-											<p>نام کتاب</p>
+											<img id="photo5" src="">
+											<h2><label id="price5"></label></h2>
+											<p><label id="name5"></label></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details.html"><h3>توضیحات بیشتر</h3></a>
-												<p>نویسنده :</p>
-												<p>ناشر :</p>
-												<p>سال چاپ :</p>
-												<p>خلاصه :</p>
+												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<p>نویسنده : <label id="writer5"></label></p>
+												<p>ناشر : <label id="publisher5"></label></p>
+												<p>سال چاپ : <label id="publishedDate5"></label></p>
+												<p>خلاصه : <label id="description5"></label></p>
 												</div>
-												<h2>44 تومان</h2>
-												<p>نام کتاب</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<h2><label id="price5"></label></h2>
+												<p><label id="name5"></label></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											</div>
 										</div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -341,12 +339,16 @@ include_once 'includes/functions.php';
 					</div><!--/recommended_items-->
 					
 				<div class="shopper-info" style="float: right; direction: rtl;">
-                            <form>
-                                <input type="name" placeholder="نام کتاب">
-                                <input type="author" placeholder="نام نویسنده">
-                                <input type="publish_year" placeholder="سال انتشار">
-                                <input type="publisher" placeholder="نام انتشارات">
-                                    <select>
+                            <form method="post">
+                                <input name="addedName" id="addedName" placeholder="نام کتاب">
+                                <input name="addedWriter" id="addedWriter" placeholder="نام نویسنده">
+                                <input name="addedPublishedDate" id="addedPublishedDate" placeholder="تاریخ انتشار">
+                                <input name="addedPublisher" id="addedPublisher" placeholder="نام انتشارات">
+								<input name="addedDescription" id="addedDescription" placeholder="توضیحات">
+								<input name="addedPrice" id="addedPrice" placeholder="قیمت">
+								<input name="addedCount" id="addedCount" placeholder="تعداد">
+								<input name="addedPhoto" id="addedPhoto" placeholder="آدرس عکس">
+                                    <select name="addedCategory" id="addedCategory">
                                         <option>-- دسته بندی --</option>
                                         <option>آموزشی</option>
                                         <option>پژوهشی</option>
@@ -356,7 +358,7 @@ include_once 'includes/functions.php';
                                         <option>سلامت</option>
                                         <option>رمان</option>
                                     </select>
-                                  <a class="btn btn-primary" href="" style="margin-right: 40px;">اضافه کردن کتاب</a>
+                                  <a class="btn btn-primary" onclick="save()" style="margin-right: 40px;">اضافه کردن کتاب</a>
                             </form>
                         </div>
 				</div>
@@ -392,7 +394,68 @@ include_once 'includes/functions.php';
 		
 		
 	</footer><!--/Footer-->
+	<script type="text/javascript">
+ 
+   
+  window.onload = function (){
+    loadInfo();
+  }
+
+ 
+  function save()
+  {
+      
+      var addedName=document.getElementById("addedName").value;
+	  var addedPrice=document.getElementById("addedPrice").value;
+	  var addedWriter=document.getElementById("addedWriter").value;
+	  var addedPublisher=document.getElementById("addedPublisher").value;
+	  var addedPublishedDate=document.getElementById("addedPublishedDate").value;
+	  var addedDescription=document.getElementById("addedDescription").value;
+	  var addedCount=document.getElementById("addedCount").value;
+	  var addedPhoto=document.getElementById("addedPhoto").value;
+	  var addedCategory=document.getElementById("addedCategory").value;
+	  
 	
+	$.post('book/add', {
+     'name' : addedName , 'price' : addedPrice, 'writer' : addedWriter, 'publisher' : addedPublisher,
+	 'publishedDate' : addedPublishedDate, 'description' : addedDescription, 'count' : addedCount, 'photo' : addedPhoto, 'category' : addedCategory},
+      function(data) {
+    
+     //document.getElementById("addedName").value ="";
+//how to empty input value
+//
+//
+	 
+	 
+     }, "json");
+    loadInfo();
+
+  }
+  
+  function loadInfo()
+  {
+	var offset;
+     $.post('book/loadBookGeneral',{
+		'offset': offset,
+      function(data) {
+		var page = 0;
+		//for(var i=0; i<6 ;i++ )
+		//{
+			document.getElementById("name0").innerHTML=data[page].name;
+			document.getElementById("price0").innerHTML=data[page].price;
+			document.getElementById("writer0").innerHTML=data[page].writer;
+			document.getElementById("publisher0").innerHTML=data[page].publisher;
+			document.getElementById("publishedDate0").innerHTML=data[page].publishedDate;
+			document.getElementById("description0").innerHTML=data[page].description;
+			document.getElementById("photo0").src = data[page].photo;
+		//}
+      
+     }, "json");
+
+  }
+  
+  </script>
+
 
   
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
