@@ -17,8 +17,8 @@ include_once 'includes/functions.php';
     <link href="<?php echo base_url();?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/price-range.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/animate.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/css/main.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/responsive.css" rel="stylesheet">
     
 
     <!--  add this  -->
@@ -38,7 +38,7 @@ include_once 'includes/functions.php';
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
+    <header id="header"><!--header-->
         
         <div class="header-middle"><!--header-middle-->
             <div class="container">
@@ -82,31 +82,33 @@ include_once 'includes/functions.php';
                 </div>
             </div>
         </div><!--/header-bottom-->
-	</header><!--/header-->
+    </header><!--/header-->
 
 
-	<section id="cart_items">
-		<div class="container">
+    <section id="cart_items">
+        <div class="container">
 
-			<div class="shopper-informations">
-				<div class="row" style="direction: rtl;">
-					<div class="col-sm-3" style="float: right;">
-						<div class="shopper-info">
+            <div class="shopper-informations">
+                <div class="row" style="direction: rtl;">
+                    <div class="col-sm-3" style="float: right;">
+                        <div class="shopper-info">
                             <div class="radio" >
-            					<label style="font-size:17px;">پیگیری وضعیت خرید</label>
-            				</div>
-							
-							<form>
-                                <select id="invoiceID" style="height:39px; margin-bottom: 10px;">
-                                    <option>-- کد رهگیری --</option>
-                                </select>
-                                <a class="btn btn-default update" style="width: 100%;
-                                            font-weight: 300;padding: 10px; margin-top: 0px;">نمایش اطلاعات</a>
-                        
-							</form>
+                                <label style="font-size:17px;">پیگیری وضعیت خرید</label>
+                            </div>
                             
-						</div>
-					</div>
+                            <form>
+                                <select id="invoiceID" style="height:39px; margin-bottom: 10px;" onchange="loadInfo()">
+                                    <option>-- کد رهگیری --</option>
+                                    <option>1</option>
+                                    <option>2</option>
+
+                                </select>
+
+                        
+                            </form>
+                            
+                        </div>
+                    </div>
                     <div class="col-sm-3 clearfix" style="float: right;" >
                         <div class="bill-to">
                             <div class="shopper-info">
@@ -125,131 +127,57 @@ include_once 'includes/functions.php';
                             </div>
                         </div>
                     </div>
-				</div>
-			</div>
-			<div class="review-payment" style="direction: rtl;">
-				<h2>اطلاعات  و وضعیت خرید</h2>
-			</div>
+                </div>
+            </div>
+            <div class="review-payment" id="tableTitle" style="direction: rtl;">
+                <h2>اطلاعات  و وضعیت خرید</h2>
+            </div>
 
-			<div class="table-responsive cart_info" style="direction: rtl;">
-				<table class="table table-condensed">
-					<thead>
-						<tr class="cart_menu" align="center">
-							<td class="image">کتاب</td>
-							<td class="description">توضیحات</td>
-							<td class="price">قیمت</td>
-							<td class="quantity">تعداد</td>
-							<td class="total">مجموع</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr align="center">
-							<td class="cart_product">
-								<a href=""><img src="<?php echo base_url();?>assets/images/cart/one.jpg" alt=""></a>
-							</td>
-							<td class="cart_description">
-                                <p>نام نویسنده:</p>
-                                <p>دسته بندی:</p>
-                                <p>سال انتشار:</p>
-                                <p>ناشر:</p>
-							</td>
-							<td class="cart_price">
-								<p>۵۹۰۰۰ تومان</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<input class="cart_quantity_input" type="text" name="quantity" value="۱" autocomplete="off" size="2">
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">۵۹۰۰۰ تومان</p>
-							</td>
+            <div class="table-responsive cart_info" style="direction: rtl;" id="tableInvoiceDetail">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu" align="center">
+                            <td class="image">کتاب</td>
+                            <td class="description">توضیحات</td>
+                            <td class="price">قیمت</td>
+                            <td class="quantity">تعداد</td>
+                            <td class="total">مجموع</td>
                         </tr>
-
-						<tr align="center">
-							<td class="cart_product">
-								<a href=""><img src="<?php echo base_url();?>assets/images/cart/two.jpg" alt=""></a>
-							</td>
-							<td class="cart_description">
-                                <p>نام نویسنده:</p>
-                                <p>دسته بندی:</p>
-                                <p>سال انتشار:</p>
-                                <p>ناشر:</p>
-							</td>
-							<td class="cart_price">
-								<p>۵۹۰۰۰ تومان</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<input class="cart_quantity_input" type="text" name="quantity" value="۱" autocomplete="off" size="2">
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">۵۹۰۰۰ تومان</p>
-							</td>
-						</tr>
+                    </thead>
+                    <tbody>
                         
-						<tr align="center">
-							<td class="cart_product">
-								<a href=""><img src="<?php echo base_url();?>assets/images/cart/three.jpg" alt=""></a>
-							</td>
-							<td class="cart_description">
-                                <p>نام نویسنده:</p>
-                                <p>دسته بندی:</p>
-                                <p>سال انتشار:</p>
-                                <p>ناشر:</p>
-							</td>
-							<td class="cart_price">
-								<p>۵۹۰۰۰ تومان</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<input class="cart_quantity_input" type="text" name="quantity" value="۱" autocomplete="off" size="2">
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">۵۹۰۰۰ تومان</p>
-							</td>
-						</tr>
-                       
-					</tbody>
+                    </tbody>
 
-				</table>
-				<div >
+                </table>
+                <div id="totalTable">
                     <h2 class="title text-center">صورت حساب</h2>
 
-					<table class="table table-condensed total-result" style="margin-right:200px;">
+                    <table class="table table-condensed total-result" style="margin-right:200px;">
 
-						<tr>
-							
+                        <tr>
+                            
 
-							<td><font size="5">جمع سبد خرید</font></td>
-							<td><font size="5">۵۹۰۰۰ تومان</font></td>
-						</tr>
-						<tr>
-						
-							
-							<td><font size="5">مالیات</font></td>
-							<td><font size="5">۱۰۰۰ تومان</font></td>
-						</tr>
-						<tr class="shipping-cost">
-							
-							<td><font size="5">هزینه حمل و نقل</font></td>
-							<td><font size="5">رایگان</font></td>
-						</tr>
-						<tr>
-							
-							<td><font size="5">مجموع</font></td>
-							<td><span><font size="5">۶۰۰۰۰ تومان</font></span></td>
-						</tr>
+                            <td><font size="5">جمع سبد خرید</font></td>
+                            <td><font size="5">۵۹۰۰۰ تومان</font></td>
+                        </tr>
+                        <tr class="shipping-cost">
+                            
+                            <td><font size="5">هزینه حمل و نقل</font></td>
+                            <td><font size="5">رایگان</font></td>
+                        </tr>
+                        <tr>
+                            
+                            <td><font size="5">مجموع</font></td>
+                            <td><span><font size="5">۶۰۰۰۰ تومان</font></span></td>
+                        </tr>
 
-					</table>
+                    </table>
                 </div>
-			</div>
+            </div>
         </div>
-	</section> <!--/#cart_items-->
+    </section> <!--/#cart_items-->
 
-	
+    
     <footer id="footer"><!--Footer-->
         <div class="footer-top" >
             <div class="container" style=direction:rtl;>
@@ -273,26 +201,79 @@ include_once 'includes/functions.php';
         
     </footer><!--/Footer-->
 
-	 <script type="text/javascript">
+     <script type="text/javascript">
       
   window.onload = function (){
-    loadInfo();
+
+    document.getElementById("totalTable").style.display="none";
+    
+    
+    
+
+
+    loadInvoiceID();
+
   } 
-  function loadInfo()
+
+function loadInvoiceID()
   {
-     $.post('Statusadmin/select',
+     $.post('statusadmin/loadInvoiceID',
       function(data) {
-      for(int i=0; i<data.size; i++)
+      for(var i=0; i<data.length; i++)
       {
         var selectInvoiceID = document.getElementById("invoiceID");
         var option = document.createElement("option");
-        option.text = data[i];
-        selectInvoiceID.add(option);
+        option.value = data[i].invoiceID;
+        selectInvoiceID.appendChild(option);
       }
-      
      }, "json");
 
   }
+
+ function loadInfo()
+  {
+     var selectedID = document.getElementById("invoiceID").value;
+     $.post('statusadmin/loadInfo', {
+      'invoiceID' :  selectedID},
+      function(data) {
+
+
+        var table_invoice = document.getElementById("tableInvoiceDetail");
+
+
+        for(var i=0; i<data.length; i++)
+        {
+            var row = document.createElement('tr');
+            
+            var photo = document.createElement('td');
+            var writer = document.createElement('td');
+            var category = document.createElement('td');
+
+
+            var photoText = document.createTextNode(data[i].photo);
+            photo.appendChild(photoText);
+        
+            var writerText = document.createTextNode(data[i].writer);
+            photo.appendChild(writerText);
+
+            var categoryText = document.createTextNode(data[i].category);
+            photo.appendChild(categoryText);
+
+            row.appendChild(photo);
+            row.appendChild(writer);
+            row.appendChild(category);
+
+            table_invoice.appendChild(row);
+        }
+    
+    
+   
+
+     }, "json");
+
+  }
+  
+
  
   
   
@@ -300,7 +281,7 @@ include_once 'includes/functions.php';
 
 
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery.scrollUp.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery.prettyPhoto.js"></script>
     <script src="<?php echo base_url();?>assets/js/main.js"></script>
