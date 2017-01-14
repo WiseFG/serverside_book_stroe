@@ -22,4 +22,11 @@ class Cart extends CI_Controller {
 	{
 		$this->load->view('cart');
 	}
+	 public function select()
+	{
+		$usename= $this->input->post('username');
+		
+		$this->load->model('cartModel');
+		$res=$this->cartModel->loadInfo($usename);
+	}
 }
