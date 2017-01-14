@@ -260,7 +260,27 @@ include_once 'includes/functions.php';
     
     
 </footer><!--/Footer-->
+<script type="text/javascript">
+    
+window.onload=function()
+{
+    loadData();
 
+}
+function loadData()
+{
+    $.post('cart/select', {
+      'username' : username },
+      function(data) {
+     /* document.getElementById("changed_name").value=data[0].name;
+      document.getElementById("changed_last_name").value=data[0].fname;
+      document.getElementById("changed_address").value=data[0].address;
+      document.getElementById("changed_email").value=data[0].email;
+      document.getElementById("changed_tel").value=data[0].phoneNumber;*/
+     }, "json");
+   
+}
+</script>
 
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
 	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
