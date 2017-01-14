@@ -54,7 +54,7 @@ function login($username, $password, $mysqli) {
         $stmt->store_result();
 
         // get variables from result.
-        $stmt->bind_result($id,$username,$db_password, $phoneNumber,$address, $email, $birthday,$gender,$role,$name);
+        $stmt->bind_result($id,$username,$db_password, $phoneNumber,$address, $email, $birthday,$gender,$role,$name,$fname);
         $stmt->fetch();
         
         // hash the password with the unique salt.
