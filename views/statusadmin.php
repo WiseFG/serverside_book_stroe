@@ -113,16 +113,16 @@ include_once 'includes/functions.php';
                         <div class="bill-to">
                             <div class="shopper-info">
                                 <form>
-                                    <select style="height:39px; margin-bottom: 10px; margin-top: 44px;">
+                                    <select id="changed_status" style="height:39px; margin-bottom: 10px; margin-top: 44px;">
                                         <option>-- وضعیت --</option>
                                         <option>در حال بررسی</option>
                                         <option>آماده ارسال</option>
                                         <option>ارسال شده</option>
                                         <option>تحویل داده شده</option>
                                     </select>
-                                    <input type="text" style="margin-bottom: 10px;" placeholder="مکان">
+                                    <input id="changed_place" type="text" style="margin-bottom: 10px;" placeholder="مکان">
                                         <a class="btn btn-default update" style="width: 100%;
-                                            font-weight: 300;padding: 10px; margin-top: 0px;">بروزرسانی وضعیت و مکان</a>
+                                            font-weight: 300;padding: 10px; margin-top: 0px;" onclick="save()">بروزرسانی وضعیت و مکان</a>
                                 </form>
                             </div>
                         </div>
@@ -145,7 +145,8 @@ include_once 'includes/functions.php';
                         </tr>
                     </thead>
                     <tbody>
-                        
+
+
                     </tbody>
 
                 </table>
@@ -217,6 +218,7 @@ include_once 'includes/functions.php';
 
 function loadInvoiceID()
   {
+
      $.post('statusadmin/loadInvoiceID',
       function(data) {
       for(var i=0; i<data.length; i++)
@@ -232,14 +234,18 @@ function loadInvoiceID()
 
  function loadInfo()
   {
-     var selectedID = document.getElementById("invoiceID").value;
-     $.post('statusadmin/loadInfo', {
-      'invoiceID' :  selectedID},
-      function(data) {
+     if(document.getElementById("invoiceID").value != "-- کد رهگیری --")
+     {
+        $("#tableInvoiceDetail tbody").empty();
+
+
+        var selectedID = document.getElementById("invoiceID").value;
+        $.post('statusadmin/loadInfo', {
+        'invoiceID' :  selectedID},
+        function(data) {
 
 
         var table_invoice = document.getElementById("tableInvoiceDetail");
-
 
         for(var i=0; i<data.length; i++)
         {
@@ -265,14 +271,33 @@ function loadInvoiceID()
 
             table_invoice.appendChild(row);
         }
-    
-    
-   
-
      }, "json");
+    }
+  }
+  function save()
+  {
+    var place=document.getElementById("changed_place").value;
+    var status = document.getElementById("changed_status").value;
+    var invoiceID = document.getElementById("invoiceID").value;
+      
+    if((invoiceID!="-- کد رهگیری --") && (place != "") && (status!="-- وضعیت --"))
+    {
+        
+        $.post('statusadmin/update', {
+        'place' : place , 'status' : status},
+         function(data) {   
+
+        }, "json");
+        
+        if(status == "تحویل داده شده")
+        {
+            $("#invoiceID option:selected").remove();
+        }
+    
+        loadInfo();
+    }
 
   }
-  
 
  
   
