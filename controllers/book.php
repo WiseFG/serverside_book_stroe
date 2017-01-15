@@ -24,10 +24,28 @@ class Book extends CI_Controller {
 	}
 	public function loadBookGeneral($offset)
 	{
-		//$book=$this->input->post('name');
-	
 		$this->load->model('bookModel');
 		$res=$this->bookModel->loadBookGeneral($offset);
+	}
+	public function loadBookCategory($category, $offset)
+	{
+		$this->load->model('bookModel');
+		$res=$this->bookModel->loadBookCategory($category, $offset);
+	}
+	public function loadBookPublisher($publisher, $offset)
+	{
+		$this->load->model('bookModel');
+		$res=$this->bookModel->loadBookPublisher($publisher, $offset);
+	}
+	public function loadBookWriter($writer, $offset)
+	{
+		$this->load->model('bookModel');
+		$res=$this->bookModel->loadBookWriter($writer, $offset);
+	}
+	public function loadBookDate($publishedDate, $offset)
+	{
+		$this->load->model('bookModel');
+		$res=$this->bookModel->loadBookDate($publishedDate, $offset);
 	}
 	public function add()
 	{
