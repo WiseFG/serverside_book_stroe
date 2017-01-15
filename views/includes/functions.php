@@ -75,7 +75,7 @@ function login($username, $password, $mysqli) {
                     $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
 
                     $_SESSION['username'] = $username;
-			$_SESSION['offset'] = 1;
+			$_SESSION['offset'] = 0;
                     $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
 
                     
