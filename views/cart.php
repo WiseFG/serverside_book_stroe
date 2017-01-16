@@ -55,6 +55,8 @@ include_once 'includes/functions.php';
                                 <li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
                                 <li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
+				<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
+				    
                                 <?php 
 
                                 sec_session_start();
