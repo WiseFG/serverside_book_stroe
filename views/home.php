@@ -258,7 +258,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price0"></label></h2>
 												<p><label id="name0"></label></p>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id0");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -285,7 +285,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price1"></label></h2>
 												<p><label id="name1"></label></p>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id1");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -313,7 +313,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price2"></label></h2>
 												<p><label id="name2"></label></p>
 												<label style="display: none" id="id2"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id2");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -341,7 +341,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price3"></label></h2>
 												<p><label id="name3"></label></p>
 												<label style="display: none" id="id3"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id3");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -369,7 +369,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price4"></label></h2>
 												<p><label id="name4"></label></p>
 												<label style="display: none" id="id4"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id4");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -397,7 +397,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price5"></label></h2>
 												<p><label id="name5"></label></p>
 												<label style="display: none" id="id5"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id5");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -454,6 +454,10 @@ include_once 'includes/functions.php';
 	
 	<script type="text/javascript">
 	
+     var username=<?php echo json_encode(get_username()); ?> ;
+        
+     var userid=<?php echo json_encode(get_userId()); ?> ;
+
 		window.onload = function (){
 		loadInfo();
 		}
@@ -564,6 +568,18 @@ include_once 'includes/functions.php';
     	
     	}
     }
+function addToCart(input){
+  		
+  		var inputId = document.getElementById('input').innerHTML;
+		 $.post('cart/insert', {
+      'userid' : userid ,'bookId':inputId},
+      function(data) {
+     /* document.getElementById("changed_name").value=data[0].name;
+      document.getElementById("changed_last_name").value=data[0].fname;
+      document.getElementById("changed_address").value=data[0].address;
+      document.getElementById("changed_email").value=data[0].email;
+      document.getElementById("changed_tel").value=data[0].phoneNumber;*/
+     }, "json");
   </script>
 
 
