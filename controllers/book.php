@@ -22,31 +22,34 @@ class Book extends CI_Controller {
 	{
 		$this->load->view('shop');
 	}
-	public function loadBookGeneral($offset)
+	public function loadBookGeneral()
 	{
+		$offset=$this->input->post('offset');
+		
 		$this->load->model('bookModel');
 		$res=$this->bookModel->loadBookGeneral($offset);
 	}
-	public function loadBookCategory($category, $offset)
+	public function loadBookCategory()
 	{
+		$offset=$this->input->post('offset');
+		$category=$this->input->post('category');
+		
 		$this->load->model('bookModel');
 		$res=$this->bookModel->loadBookCategory($category, $offset);
 	}
-	public function loadBookPublisher($publisher, $offset)
+	public function search()
 	{
+		$offset=$this->input->post('offset');
+		$category=$this->input->post('category');
+		$name=$this->input->post('name');
+		$writer=$this->input->post('writer');
+		$publisher=$this->input->post('publisher');
+		$publishedDate=$this->input->post('publishedDate');
+		
 		$this->load->model('bookModel');
-		$res=$this->bookModel->loadBookPublisher($publisher, $offset);
+		$res=$this->bookModel->search($offset, $category, $name, $writer, $publisher, $publishedDate);
 	}
-	public function loadBookWriter($writer, $offset)
-	{
-		$this->load->model('bookModel');
-		$res=$this->bookModel->loadBookWriter($writer, $offset);
-	}
-	public function loadBookDate($publishedDate, $offset)
-	{
-		$this->load->model('bookModel');
-		$res=$this->bookModel->loadBookDate($publishedDate, $offset);
-	}
+	
 	public function add()
 	{
 		$name=$this->input->post('name');
