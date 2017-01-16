@@ -54,6 +54,31 @@ class bookModel extends CI_Model
     	echo json_encode($post);
     
 	}
+	/*function loadBookId($id)
+	{
+		$i=0;
+		$sql = "SELECT * FROM `book` 
+			 WHERE `id` = '". $id ."';
+		$result = $this->db->query($sql);
+		$post=array();
+		foreach($result->result() as $rows)
+		{
+			$post[$i]["name"] = $rows->name;
+			$post[$i]["publisher"] = $rows->publisher;
+			$post[$i]["writer"] = $rows->writer;
+			$post[$i]["publishedDate"] = $rows->publishedDate;
+			$post[$i]["description"] = $rows->description;
+			$post[$i]["price"] = $rows->price;
+			$post[$i]["counter"] = $rows->counter;
+			$post[$i]["photo"] = $rows->photo;
+			$post[$i]["category"] = $rows->category;
+			$post[$i]["id"] = $rows->id;
+			
+			$i++;
+		}
+    	return;
+    
+	}*/
 	function search($offset, $category, $name, $writer, $publisher, $publishedDate)
 	{
 		$i=0;
@@ -105,7 +130,6 @@ class bookModel extends CI_Model
 		}
 		
 		$sql = substr( $sql, 0, -4 );
-		echo $sql;
 		$sql .= "LIMIT 6 OFFSET ".$offset;
 		
 		$result = $this->db->query($sql);
@@ -146,6 +170,15 @@ class bookModel extends CI_Model
 		$res=$this->db->insert('book',$all);
 		return $res;
 	}
+	function addid($id)
+	{
+		$all = array(
+		'givenid'=>$id
+		);
+		//print_r($all);
+		$res=$this->db->insert('information',$all);
+		return;
+	}
 	function track($invoiceID)
 	{
 		$sql = "SELECT * FROM `invoice`
@@ -153,6 +186,7 @@ class bookModel extends CI_Model
     	$result = $this->db->query($sql);
     	echo json_encode( $result->result());
 	}
+
 	
 
 
