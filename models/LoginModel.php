@@ -22,6 +22,27 @@ class LoginModel extends CI_Model
 		$res=$this->db->insert('user',$all);
 		return $res;
 	}
+	function setCart($user_data)
+	{
+		
+		$username=$user_data['reg_user'];
+		$sql = "SELECT id FROM `user`
+			 WHERE `username` ='".$username ."'";
+		$query = $this->db->get('user', array('username' => $username));
+    	
+    	$id;
+    	foreach ($query->result() as $row)
+		{
+		       $id = $row->id;
+		}
+
+		
+		$all = array(
+		'userId'=>$id);
+		$res=$this->db->insert('cart',$all);
+		return $res;
+
+	}
 
 	
 
