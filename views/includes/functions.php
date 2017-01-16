@@ -76,6 +76,7 @@ function login($username, $password, $mysqli) {
 			
                     $_SESSION['role'] = $role;
                     $_SESSION['username'] = $username;
+		 $_SESSION['userId'] = $id;
                     $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
 
                     
@@ -127,7 +128,10 @@ function get_role()
     return  $_SESSION['role'];
 }
 
-
+function get_userId()
+{
+    return  $_SESSION['userId'];
+}
 function login_check($mysqli) {
     // Check if all session variables are set 
     if (isset($_SESSION['username'], $_SESSION['login_string'])) {
