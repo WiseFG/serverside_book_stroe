@@ -454,14 +454,6 @@ include_once 'includes/functions.php';
 		//var i=0 ;
 		//for($i=0; $i<6; $i++)
 		{
-			/*document.getElementById("name".$i).innerHTML=data[$i].name;
-			document.getElementById("price".$i).innerHTML=data[$i].price;
-			document.getElementById("writer".$i).innerHTML=data[$i].writer;
-			document.getElementById("publisher".$i).innerHTML=data[$i].publisher;
-			document.getElementById("publishedDate".$i).innerHTML=data[$i].publishedDate;
-			document.getElementById("description".$i).innerHTML=data[$i].description;
-			document.getElementById("photo".$i).src = data[$i].photo;
-			*/
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
 			document.getElementById("writer0").innerHTML=data[0].writer;
@@ -469,6 +461,7 @@ include_once 'includes/functions.php';
 			document.getElementById("publishedDate0").innerHTML=data[0].publishedDate;
 			document.getElementById("description0").innerHTML=data[0].description;
 			document.getElementById("photo0").src = data[0].photo;
+			document.getElementById("id0").innerHTML=data[0].id;
 			
 			document.getElementById("name1").innerHTML=data[1].name;
 			document.getElementById("price1").innerHTML=data[1].price;
@@ -477,6 +470,7 @@ include_once 'includes/functions.php';
 			document.getElementById("publishedDate1").innerHTML=data[1].publishedDate;
 			document.getElementById("description1").innerHTML=data[1].description;
 			document.getElementById("photo1").src = data[1].photo;
+			document.getElementById("id1").innerHTML=data[1].id;
 			
 			document.getElementById("name2").innerHTML=data[2].name;
 			document.getElementById("price2").innerHTML=data[2].price;
@@ -485,6 +479,7 @@ include_once 'includes/functions.php';
 			document.getElementById("publishedDate2").innerHTML=data[2].publishedDate;
 			document.getElementById("description2").innerHTML=data[2].description;
 			document.getElementById("photo2").src = data[2].photo;
+			document.getElementById("id2").innerHTML=data[2].id;
 			
 			document.getElementById("name3").innerHTML=data[3].name;
 			document.getElementById("price3").innerHTML=data[3].price;
@@ -493,6 +488,7 @@ include_once 'includes/functions.php';
 			document.getElementById("publishedDate3").innerHTML=data[3].publishedDate;
 			document.getElementById("description3").innerHTML=data[3].description;
 			document.getElementById("photo3").src = data[3].photo;
+			document.getElementById("id3").innerHTML=data[3].id;
 			
 			document.getElementById("name4").innerHTML=data[4].name;
 			document.getElementById("price4").innerHTML=data[4].price;
@@ -501,6 +497,7 @@ include_once 'includes/functions.php';
 			document.getElementById("publishedDate4").innerHTML=data[4].publishedDate;
 			document.getElementById("description4").innerHTML=data[4].description;
 			document.getElementById("photo4").src = data[4].photo;
+			document.getElementById("id4").innerHTML=data[4].id;
 			
 			document.getElementById("name5").innerHTML=data[5].name;
 			document.getElementById("price5").innerHTML=data[5].price;
@@ -509,6 +506,7 @@ include_once 'includes/functions.php';
 			document.getElementById("publishedDate5").innerHTML=data[5].publishedDate;
 			document.getElementById("description5").innerHTML=data[5].description;
 			document.getElementById("photo5").src = data[5].photo;
+			document.getElementById("id5").innerHTML=data[5].id;
 			
 			
 		}
