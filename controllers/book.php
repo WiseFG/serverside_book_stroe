@@ -45,11 +45,9 @@ class Book extends CI_Controller {
 		
 	}
 	public function loadBookId()
-	{
-		$id=$this->input->post('id');
-		
+	{	
 		$this->load->model('bookModel');
-		$res=$this->bookModel->loadBookId($id);
+		$res=$this->bookModel->loadBookId();
 	}
 	public function search()
 	{
