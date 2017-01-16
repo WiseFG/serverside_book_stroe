@@ -68,7 +68,10 @@ if (login_check($mysqli) == true) {
                                 <li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
                                 <li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
- 								<?php 
+				<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li> 
+				  
+				    
+ 				<?php 
 								
                                 if (login_check($mysqli) == true) {?>
                                 <li><a href="login/logout"><i class="fa fa-shopping-cart"></i>خروج</a></li>
