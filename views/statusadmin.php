@@ -73,11 +73,12 @@ include_once 'includes/functions.php';
                     <div class="col-sm-14">
                         <div class="mainmenu pull-right">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html">خانه</a></li>
-                                <li><a href="shop.html">محصولات</a></li>
-                                <li><a href="search.html">جستجو</a></li>
-                                <li><a href="contact_us.html">تماس با ما</a></li>
-                                <li><a href="about.html">درباره ما</a></li>
+				<li><a href="home">خانه</a></li>
+                                <li><a href="shop">محصولات</a></li>
+                                <li><a href="search">جستجو</a></li>
+                                <li><a href="contact_us">تماس با ما</a></li>
+                                <li><a href="about">درباره ما</a></li>
+                            
                         
                             </ul>
                         </div>
