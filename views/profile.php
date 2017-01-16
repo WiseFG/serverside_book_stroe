@@ -3,6 +3,14 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
+sec_session_start();
+
+if (login_check($mysqli) == true) {
+} else {
+  header("Location: login");
+  exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,8 +67,8 @@ include_once 'includes/functions.php';
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
 				<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
 
-                                <?php 
-                                sec_session_start();
+                                 <?php 
+                
                                 if (login_check($mysqli) == true) {?>
                                 <li><a href="login/logout"><i class="fa fa-shopping-cart"></i>خروج</a></li>
                                 <?php } ?>
