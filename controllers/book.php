@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Book extends CI_Controller {
 
 	/**
@@ -36,6 +35,21 @@ class Book extends CI_Controller {
 		
 		$this->load->model('bookModel');
 		$res=$this->bookModel->loadBookCategory($category, $offset);
+	}
+	public function saveid()
+	{
+		$id=$this->input->post('id');
+		$this->load->model('bookModel');
+		$res=$this->bookModel->addid($id);
+		$this->load->view('product_details');
+		
+	}
+	public function loadBookId()
+	{
+		$id=$this->input->post('id');
+		
+		$this->load->model('bookModel');
+		$res=$this->bookModel->loadBookId($id);
 	}
 	public function search()
 	{
