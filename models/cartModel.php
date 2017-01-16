@@ -18,22 +18,18 @@ class CartModel extends CI_Model
     	$i = 0;
     	foreach($result->result() as $rows)
     	{
-    		$post [$i]["photo"] = $rows->photo;
+    		$post [$i]["name"] = $rows->name;
     		$post [$i]["publisher"] = $rows->publisher;
 			$post [$i]["writer"] = $rows->writer;
-    		$post [$i]["publishDate"] = $rows->publishDate;
+    		$post [$i]["publishedDate"] = $rows->publishedDate;
     		$post [$i]["category"] = $rows->category;
     		$post [$i]["price"] = $rows->price;
-			$post [$i]["count"] = $rows->price;;
+			$post [$i]["counter"] = $rows->counter;
 			$i++;
     	}
     
     	echo json_encode($post);
 	}
-
-	
-	
-
 
 }
 ?>
