@@ -6,6 +6,30 @@ class CartModel extends CI_Model
 		parent:: __construct();
 	}
 
+	function insert($userId,$bookId)
+	{
+
+		
+		$query = $this->db->get('cart', array('userId' => $userId));
+    	
+    	$id;
+    	foreach ($query->result() as $row)
+		{
+		       $id = $row->id;
+		}
+
+
+		$all = array(
+				'bookId'=>$bookId,
+		'cartId'=>$id,
+	
+		'counter'=>1
+		
+		);
+		//print_r($all);
+		$res=$this->db->insert('cartrow',$all);
+	}
+
 
 	function loadInfo($user)
 	{
