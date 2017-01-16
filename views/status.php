@@ -145,7 +145,7 @@
 						<label style="text-align:center;margin-right:20px">
 							تا انتقال به سایت پذیرنده ۹ ثانیه
 						</label>
-						  <button style="float:left;margin-left:40px;margin-bottom:20px;" type="submit" class="btn">تکمیل خرید</button>
+						  <a style="float:left;margin-left:40px;margin-bottom:20px;"  class="btn">تکمیل خرید</a>
                                           
 				</div>
 
