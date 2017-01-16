@@ -103,14 +103,23 @@ function get_username()
 	return  $_SESSION['username'];
 }
 
-function set_offset($input)
+function dec_offset()
 {
-    $GLOBALS['offset']=$input;
+    $GLOBALS['offset']--;
+}
+function inc_offset()
+{
+    $GLOBALS['offset']++;
 }
 
 function get_offset()
 {
     return  $GLOBALS['offset'];
+}
+
+function set_offset($input)
+{
+    $GLOBALS['offset'] = $input;
 }
 
 function get_role()
