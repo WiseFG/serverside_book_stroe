@@ -242,6 +242,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher0"></label></p>
 												<p>سال چاپ : <label id="publishedDate0"></label></p>
 												<p>خلاصه : <label id="description0"></label></p>
+												<label style="display: none" id="id0"></label> 
 												</div>
 												<h2><label id="price0"></label></h2>
 												<p><label id="name0"></label></p>
@@ -268,6 +269,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher1"></label></p>
 												<p>سال چاپ : <label id="publishedDate1"></label></p>
 												<p>خلاصه : <label id="description1"></label></p>
+												<label style="display: none" id="id1"></label>
 												</div>
 												<h2><label id="price1"></label></h2>
 												<p><label id="name1"></label></p>
@@ -297,6 +299,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price2"></label></h2>
 												<p><label id="name2"></label></p>
+												<label style="display: none" id="id2"></label>
 												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
@@ -323,6 +326,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price3"></label></h2>
 												<p><label id="name3"></label></p>
+												<label style="display: none" id="id3"></label>
 												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
@@ -349,6 +353,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price4"></label></h2>
 												<p><label id="name4"></label></p>
+												<label style="display: none" id="id4"></label>
 												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
@@ -375,6 +380,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price5"></label></h2>
 												<p><label id="name5"></label></p>
+												<label style="display: none" id="id5"></label>
 												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
@@ -510,6 +516,7 @@ include_once 'includes/functions.php';
      }, "json");
 
   }
+  
   /*function searchCategory(category)
   {
 	
@@ -522,6 +529,19 @@ include_once 'includes/functions.php';
      }, "json");
 
   }*/
+  function incOffset()
+  {
+	<?php echo json_encode(set_offset(get_offset()+1)) ?>;
+	loadInfo();
+  }
+  function decOffset()
+  {
+	if(temp>0)
+	{
+		<?php echo json_encode(set_offset(get_offset()-1)) ?>;
+	}
+	loadInfo();
+  }
   
   </script>
 
