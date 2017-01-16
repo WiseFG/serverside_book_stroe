@@ -14,9 +14,10 @@ class StatusadminModel extends CI_Model
 			 WHERE `delivered` =".$zero ;
     	$result = $this->db->query($sql);
     	$i = 0;
+
     	foreach($result->result() as $rows)
     	{
-    		$post[$i]["invoiceID"] = $rows->invoiceId;
+    		$post[$i]["invoiceID"] = $rows->id;
     		$i++;
     		
     	}
@@ -26,34 +27,60 @@ class StatusadminModel extends CI_Model
 	
 	function loadInfo($invoiceID)
 	{
-		$sql1 = "SELECT bookid, counter FROM `invoicerow` join
+		$sql1 = "SELECT bookId, counter FROM `invoicerow` join
 		`book` ON (`invoicerow`.`bookid`=`book`.`id`) 
-			 WHERE `invoiceid` =". $invoiceID;
+			 WHERE `invoiceId` =". $invoiceID;
     	$result = $this->db->query($sql1);
     	$post= array();
     	$i = 0;
     	foreach($result->result() as $rows)
     	{
-    		$bookID = $rows->invoiceId;
+    		$bookID = $rows->bookId;
+            $bookIDInt = (int)$bookID;
+
     		$sql2 = "SELECT * FROM `book` 
-			 WHERE `id` =".$bookID;
+			 WHERE `id` =" .$bookIDInt;
     		$result2 = $this->db->query($sql2);
-    		$post [$i]["photo"] = $rows->photo;
-    		$post [$i]["publisher"] = $rows->publisher;
-			$post [$i]["writer"] = $rows->writer;
-    		$post [$i]["publishDate"] = $rows->publishDate;
-    		$post [$i]["category"] = $rows->category;
-    		$post [$i]["price"] = $rows->price;
-			$post [$i]["count"] = $result;
-			$i++;
+            foreach($result2->result() as $r)
+            {
+    		  $post [$i]["name"] = $r->name;
+    		  $post [$i]["publisher"] = $r->publisher;
+			  $post [$i]["writer"] = $r->writer;
+    		  $post [$i]["publishedDate"] = $r->publishedDate;
+    		  $post [$i]["category"] = $r->category;
+    		  $post [$i]["price"] = $r->price;
+			  $post [$i]["counter"] = $rows->counter;
+            }
+            $i++;
+
     	}
     
     	echo json_encode($post);
 	}
 
-    function updateInfo($place,$status)
+    function loadPlace($invoiceID)
     {
-        $sql='UPDATE invoice SET  place = "'.$place.'" ,status = "'.$status.'"'; 
+        $sql = "SELECT place, sts FROM `invoice`
+             WHERE `id` =". $invoiceID;
+        $result = $this->db->query($sql);
+        $post= array();
+        $i = 0;
+        foreach($result->result() as $rows)
+        {
+              $post [$i]["place"] = $rows->place;
+              $post [$i]["sts"] = $rows->sts;
+    
+            $i++;
+
+        }
+    
+        echo json_encode($post);
+    }
+
+    function updateInfo($place,$status,$invoiceID)
+    {
+        $new_id = (int)$invoiceID;
+        $sql="UPDATE invoice SET  place = '".$place."' ,sts = '".$status."' WHERE id=" .$new_id; 
         $result = $this->db->query($sql);
     }
 }
