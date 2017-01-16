@@ -31,6 +31,7 @@ class Login extends CI_Controller {
 		$res=$this->LoginModel->registration($form_data);
 		if($res)
 		{
+			$res=$this->LoginModel->setCart($form_data);
 			 redirect('home', 'refresh');	
 		}
 		else
