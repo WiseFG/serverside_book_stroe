@@ -73,7 +73,8 @@ function login($username, $password, $mysqli) {
                 
                     // XSS protection as we might print this value
                     $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
-
+			
+                    $_SESSION['role'] = $role;
                     $_SESSION['username'] = $username;
                     $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
 
@@ -112,6 +113,10 @@ function get_offset()
     return  $GLOBALS['offset'];
 }
 
+function get_role()
+{
+    return  $_SESSION['role'];
+}
 
 
 function login_check($mysqli) {
