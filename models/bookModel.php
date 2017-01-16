@@ -8,7 +8,7 @@ class bookModel extends CI_Model
 	function loadBookGeneral($offset)
 	{
 		$i=0;
-		$sql = "SELECT * FROM `book` limit".$offset." 6" ;
+		$sql = "SELECT * FROM `book` LIMIT 6 OFFSET ".$offset ;
     	$result = $this->db->query($sql);
 		$post=array();
 		foreach($result->result() as $rows)
@@ -32,7 +32,7 @@ class bookModel extends CI_Model
 		$i=0;
 		$sql = "SELECT * FROM `book` 
 			 WHERE `category` = '". $category ."'
-			 limit".$offset." 6" ;
+			 LIMIT 6 OFFSET ".$offset ;
 		$result = $this->db->query($sql);
 		$post=array();
 		foreach($result->result() as $rows)
@@ -51,13 +51,47 @@ class bookModel extends CI_Model
     	echo json_encode($post);
     
 	}
-	function loadBookPublisher($publisher, $offset)
+	/*function search($offset, $category, $name, $writer, $publisher, $publishedDate)
 	{
-
 		$i=0;
-		$sql = "SELECT * FROM `book` 
-			 WHERE `publisher` = '". $publisher ."'
-			 limit".$offset." 6" ;
+		$started=0;
+		$name = trim($name);
+		$writer = trim($writer);
+		$publisher = trim($publisher);
+		$publishedDate = trim($publishedDate);
+		$category = trim($category);
+		$commandName = "`name` = '".$name"'";
+		$commandWriter = "`writer` = '".$writer"'";
+		$commandPublisher = "`publisher` = '".$publisher"'";
+		$commandPublishedDate = "`publishedDate` = '".$publishedDate"'";
+		$commandCategory = "`category` = '".$category"'";
+		$sql = "SELECT * FROM `book` ";
+		if($name!=null && $name!="")
+		{
+			$sql .= "WHERE ".$commandName." AND ";
+		}
+		
+		if($writer!=null && $writer!="")
+		{
+			$sql .= "WHERE ".$commandWriter." AND ";		
+		}
+		if($publisher !=null && $publisher!="")
+		{
+			$sql .= "WHERE ".$commandPublisher." AND ";
+		}
+		if($publishedDate!=null && $publishedDate!="")
+		{
+			$sql .= "WHERE ".$commandPublishedDate." AND ";
+		}
+		if($category!=null && $category!="")
+		{
+			$sql .= "WHERE ".$commandCategory." AND ";	
+		}
+		
+		$sql = substr( $str1, 0, -4 );
+		echo $sql;
+		$sql .= "LIMIT 6 OFFSET ".$offset;
+		
 		$result = $this->db->query($sql);
 		$post=array();
 		foreach($result->result() as $rows)
@@ -75,58 +109,7 @@ class bookModel extends CI_Model
 		}
     	echo json_encode($post);
     
-	}
-	function loadBookWriter($writer, $offset)
-	{
-
-		$i=0;
-		$sql = "SELECT * FROM `book` 
-			 WHERE `writer` = '". $writer ."'
-			 limit".$offset." 6" ;
-		$result = $this->db->query($sql);
-		$post=array();
-		foreach($result->result() as $rows)
-		{
-			$post[$i]["name"] = $rows->name;
-			$post[$i]["publisher"] = $rows->publisher;
-			$post[$i]["writer"] = $rows->writer;
-			$post[$i]["publishedDate"] = $rows->publishedDate;
-			$post[$i]["description"] = $rows->description;
-			$post[$i]["price"] = $rows->price;
-			$post[$i]["counter"] = $rows->counter;
-			$post[$i]["photo"] = $rows->photo;
-			$post[$i]["category"] = $rows->category;
-			$i++;
-		}
-    	echo json_encode($post);
-    
-	}
-	function loadBookDate($publishedDate, $offset)
-	{
-
-		$i=0;
-		$sql = "SELECT * FROM `book` 
-			 WHERE `publishedDate` = '". $publishedDate ."'
-			 limit".$offset." 6" ;
-		$result = $this->db->query($sql);
-		$post=array();
-		foreach($result->result() as $rows)
-		{
-			$post[$i]["name"] = $rows->name;
-			$post[$i]["publisher"] = $rows->publisher;
-			$post[$i]["writer"] = $rows->writer;
-			$post[$i]["publishedDate"] = $rows->publishedDate;
-			$post[$i]["description"] = $rows->description;
-			$post[$i]["price"] = $rows->price;
-			$post[$i]["counter"] = $rows->counter;
-			$post[$i]["photo"] = $rows->photo;
-			$post[$i]["category"] = $rows->category;
-			$i++;
-		}
-    	echo json_encode($post);
-    
-	}
-	
+	}*/
 
 	function add($name, $writer, $publishedDate, $publisher, $description, $price, $count, $photo, $category)
 	{
