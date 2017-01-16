@@ -146,14 +146,14 @@ class bookModel extends CI_Model
 		$res=$this->db->insert('book',$all);
 		return $res;
 	}
-
 	function track($invoiceID)
 	{
-		$sql = "SELECT sts,place FROM `invoice`
-			 WHERE `id` =". $invoiceID;
+		$sql = "SELECT * FROM `invoice`
+			 WHERE `id` =". (int)$invoiceID;
     	$result = $this->db->query($sql);
     	echo json_encode( $result->result());
 	}
+	
 
 
 }
