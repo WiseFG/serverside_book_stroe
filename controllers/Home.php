@@ -22,4 +22,12 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('home');
 	}
+	
+	public function track()
+	{
+		$invoiceID=$this->input->post('invoiceID');
+
+		$this->load->model('bookModel');
+		$res=$this->bookModel->track($invoiceID);
+	}
 }
