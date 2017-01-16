@@ -97,7 +97,7 @@ include_once 'includes/functions.php';
                 <div class="row">
                     
                     <div class="col-sm-9 padding-right" >
-                        <div class="features_items" style=direction:rtl; ><!--features_items-->
+                        <div class="features_items" id="tableInvoiceDetail" style="direction:rtl;"> <!--features_items-->
                             <h2 class="title text-center">سبد خرید</h2>
                             
                             <div class="table-responsive cart_info" style="direction: rtl;">
@@ -113,88 +113,7 @@ include_once 'includes/functions.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr align="left">
-                                            <td class="cart_product" >
-                                                <img  src="<?php echo base_url();?>assets/images/cart/one.jpg" >
-                                            </td>
-                                            <td class="cart_description">
-                                                <p>نام نویسنده:</p>
-                                                <p>دسته بندی:</p>
-                                                <p>سال انتشار:</p>
-                                                <p>ناشر:</p>
-                                            </td>
-                                            <td class="cart_price">
-                                                <p>۵۹۰۰۰ تومان</p>
-                                            </td>
-                                            <td class="cart_quantity">
-                                                <div class="cart_quantity_button">
-                                                    <a class="cart_quantity_down" href=""> - </a>
-                                                    <input class="cart_quantity_input" type="text" name="quantity" value="۱" autocomplete="off" size="2">
-                                                        <a class="cart_quantity_up" href=""> + </a>
-                                                        </div>
-                                            </td>
-                                            <td class="cart_total">
-                                                <p class="cart_total_price">۵۹۰۰۰ تومان</p>
-                                            </td>
-                                            <td class="cart_delete">
-                                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
                                         
-                                        <tr align="left">
-                                            <td class="cart_product">
-                                                <a href=""><img src="<?php echo base_url();?>assets/images/cart/two.jpg" alt="" </a>
-                                            </td>
-                                            <td class="cart_description">
-                                                <p>نام نویسنده:</p>
-                                                <p>دسته بندی:</p>
-                                                <p>سال انتشار:</p>
-                                                <p>ناشر:</p>
-                                            </td>
-                                            <td class="cart_price">
-                                                <p>۵۹۰۰۰ تومان</p>
-                                            </td>
-                                            <td class="cart_quantity">
-                                                <div class="cart_quantity_button">
-                                                    <a class="cart_quantity_down" href=""> - </a>
-                                                    <input class="cart_quantity_input" type="text" name="quantity" value="۱" autocomplete="off" size="2">
-                                                        <a class="cart_quantity_up" href=""> + </a>
-                                                        </div>
-                                            </td>
-                                            <td class="cart_total">
-                                                <p class="cart_total_price">۵۹۰۰۰ تومان</p>
-                                            </td>
-                                            <td class="cart_delete">
-                                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr align="left">
-                                            <td class="cart_product">
-                                                <a href=""><img src="<?php echo base_url();?>assets/images/cart/three.jpg" alt="" </a>
-                                            </td>
-                                            <td class="cart_description">
-                                                <p>نام نویسنده:</p>
-                                                <p>دسته بندی:</p>
-                                                <p>سال انتشار:</p>
-                                                <p>ناشر:</p>
-                                            </td>
-                                            <td class="cart_price">
-                                                <p>۵۹۰۰۰ تومان</p>
-                                            </td>
-                                            <td class="cart_quantity">
-                                                <div class="cart_quantity_button">
-                                                    <a class="cart_quantity_down" href=""> - </a>
-                                                    <input class="cart_quantity_input" type="text" name="quantity" value="۱"    autocomplete="off" size="2">
-                                                    <a class="cart_quantity_up" href=""> + </a>
-                                                </div>
-                                            </td>
-                                            <td class="cart_total">
-                                                <p class="cart_total_price">۵۹۰۰۰ تومان</p>
-                                            </td>
-                                            <td class="cart_delete">
-                                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -222,7 +141,7 @@ include_once 'includes/functions.php';
 		<div class="container">
 			<div class="row">
                 <div class="col-sm-8">
-                    <div class="total_area" style="margin-left: 130px;">
+                    <div class="total_area" id="totalTable" style="margin-left: 130px;">
 						<ul>
 							<li style="direction: rtl;">۵۹۰۰۰ تومان<span>جمع سبد خرید</span></li>
 							<li style="direction: rtl;">۱۰۰۰ تومان<span>مالیات</span></li>
@@ -266,7 +185,9 @@ include_once 'includes/functions.php';
     
 window.onload=function()
 {
+    document.getElementById("totalTable").style.display="none";
     loadData();
+
 
 }
 function loadData()
@@ -279,6 +200,26 @@ function loadData()
       document.getElementById("changed_address").value=data[0].address;
       document.getElementById("changed_email").value=data[0].email;
       document.getElementById("changed_tel").value=data[0].phoneNumber;*/
+    var table_invoice = document.getElementById("tableInvoiceDetail");
+
+        for(var i=0; i<data.length; i++)
+        {
+            //var row = document.createElement('tr');
+            
+            var name = data[i].name;
+            var writer = data[i].writer;
+            var category = data[i].category;
+            var publishedDate = data[i].publishedDate;
+            var publisher = data[i].publisher;
+            var price = data[i].price;
+            var counter = data[i].counter;
+            var place;
+            var sts;
+
+            var newRowContent = "<tr align=\"center\"><td style=\" padding-right:190px; margin-left: 200px;\"  class=\"cart_product\"><a>" + name + "</a></td> <td c style=\"padding-right: 30px;\" lass=\"cart_description\"><p>نام نویسنده: " + writer+ "</p><p>دسته بندی: " + writer + "</p><p>سال انتشار: " + publishedDate + "</p><p>ناشر: " + publisher + "</p></td><td style=\"padding-right: 180px;\" class=\"cart_price\"><p>" + price + " تومان" + "</p></td><td style=\"padding-right:140px;\" class=\"cart_quantity\"><div class=\"cart_quantity_button\"><input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value= " + counter + " size=\"2\"></div></td><td style=\"padding-right:115px;\" class=\"cart_total\"><p class=\"cart_total_price\">" + total + " تومان"+ "</p></td></tr>";
+
+        $(newRowContent).appendTo($("#tableInvoiceDetail")); 
+    }
      }, "json");
    
 }
