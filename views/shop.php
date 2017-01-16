@@ -5,6 +5,7 @@ include_once 'includes/functions.php';
 
 ?>
 <html lang="en"><head>
+	 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -103,7 +104,7 @@ include_once 'includes/functions.php';
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+										<a data-toggle="collapse" data-parent="#accordian" >
 											<span class="badge pull-left"><i class="fa fa-plus"></i></span>
 											آموزشی
 										</a>
@@ -112,9 +113,9 @@ include_once 'includes/functions.php';
 								<div id="mens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="shop.html">گروه سنی کودکان</a></li>
-											<li><a href="shop.html">گروه سنی نوجوانان</a></li>
-											<li><a href="shop.html">گروه سنی جوانان</a></li>
+											<li><a href="shop">گروه سنی کودکان</a></li>
+											<li><a href="shop">گروه سنی نوجوانان</a></li>
+											<li><a href="shop">گروه سنی جوانان</a></li>
 										
 										</ul>
 									</div>
@@ -124,32 +125,32 @@ include_once 'includes/functions.php';
 							
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">پژوهشی</a></h4>
+									<h4 class="panel-title"><a href="shop">پژوهشی</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">ادبیات</a></h4>
+									<h4 class="panel-title"><a href="shop">ادبیات</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">کودک و نوجوان</a></h4>
+									<h4 class="panel-title"><a href="shop">کودک و نوجوان</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">تاریخی</a></h4>
+									<h4 class="panel-title"><a href="shop">تاریخی</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">سلامت</a></h4>
+									<h4 class="panel-title"><a href="shop">سلامت</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">رمان</a></h4>
+									<h4 class="panel-title"><a href="shop">رمان</a></h4>
 								</div>
 							</div>
 						
@@ -169,10 +170,10 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img id="photo0" src="">
+											<img id="photo0" >
 											<h2><label id="price0"></label></h2>
 											<p><label id="name0"></label></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
@@ -185,7 +186,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price0"></label></h2>
 												<p><label id="name0"></label></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -195,10 +196,10 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products" >
 									<div class="productinfo text-center">
-											<img id="photo1" src="">
+											<img id="photo1">
 											<h2><label id="price1"></label></h2>
 											<p><label id="name1"></label></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
@@ -211,7 +212,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price1"></label></h2>
 												<p><label id="name1"></label></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -221,10 +222,10 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-											<img id="photo2" src="">
+											<img id="photo2">
 											<h2><label id="price2"></label></h2>
 											<p><label id="name2"></label></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
@@ -237,7 +238,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price2"></label></h2>
 												<p><label id="name2"></label></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -247,10 +248,10 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-											<img id="photo0" src="">
+											<img id="photo3">
 											<h2><label id="price3"></label></h2>
 											<p><label id="name3"></label></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
@@ -263,7 +264,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price3"></label></h2>
 												<p><label id="name3"></label></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -273,10 +274,10 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-											<img id="photo4" src="">
+											<img id="photo4">
 											<h2><label id="price4"></label></h2>
 											<p><label id="name4"></label></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
@@ -289,7 +290,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price4"></label></h2>
 												<p><label id="name4"></label></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -299,10 +300,10 @@ include_once 'includes/functions.php';
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-											<img id="photo5" src="">
+											<img id="photo5">
 											<h2><label id="price5"></label></h2>
 											<p><label id="name5"></label></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
@@ -315,7 +316,7 @@ include_once 'includes/functions.php';
 												</div>
 												<h2><label id="price5"></label></h2>
 												<p><label id="name5"></label></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -358,7 +359,7 @@ include_once 'includes/functions.php';
                                         <option>سلامت</option>
                                         <option>رمان</option>
                                     </select>
-                                  <a class="btn btn-primary" onclick="save()" style="margin-right: 40px;">اضافه کردن کتاب</a>
+                                  <a class="btn btn-primary" style="margin-right: 40px;"  onclick="save();">اضافه کردن کتاب</a>
                             </form>
                         </div>
 				</div>
@@ -375,7 +376,7 @@ include_once 'includes/functions.php';
 				<div class="row" >		
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="<?php echo base_url();?>assets/images/home/map.png" alt="" />
+							<img src="<?php echo base_url();?>assets/images/home/map.png" />
 							<p> آدرس شرکت</p>
 						</div>
 					</div>
@@ -386,20 +387,20 @@ include_once 'includes/functions.php';
 						</div>
 					</div>
 				
-					
-					
 				</div>
 			</div>
 		</div>
 		
 		
 	</footer><!--/Footer-->
+	
 	<script type="text/javascript">
- 
-   
-  window.onload = function (){
-    loadInfo();
-  }
+		var offset ;
+  
+	   
+		window.onload = function (){
+		loadInfo();
+		}
 
  
   function save()
@@ -420,39 +421,88 @@ include_once 'includes/functions.php';
      'name' : addedName , 'price' : addedPrice, 'writer' : addedWriter, 'publisher' : addedPublisher,
 	 'publishedDate' : addedPublishedDate, 'description' : addedDescription, 'count' : addedCount, 'photo' : addedPhoto, 'category' : addedCategory},
       function(data) {
-    
      //document.getElementById("addedName").value ="";
 //how to empty input value
 //
-//
-	 
-	 
+// 
      }, "json");
     loadInfo();
+	
+  }
+  function loadInfo()
+  {
+	 <?php echo json_encode(set_offset(0)); ?>;
+	 offset =<?php echo json_encode(get_offset()); ?>;
+	
+     $.post('book/loadBookGeneral',{
+		'offset' : offset},
+      function(data) {
+		//var i=0 ;
+		//for($i=0; $i<6; $i++)
+		{
+			/*document.getElementById("name".$i).innerHTML=data[$i].name;
+			document.getElementById("price".$i).innerHTML=data[$i].price;
+			document.getElementById("writer".$i).innerHTML=data[$i].writer;
+			document.getElementById("publisher".$i).innerHTML=data[$i].publisher;
+			document.getElementById("publishedDate".$i).innerHTML=data[$i].publishedDate;
+			document.getElementById("description".$i).innerHTML=data[$i].description;
+			document.getElementById("photo".$i).src = data[$i].photo;
+			*/
+			document.getElementById("name0").innerHTML=data[0].name;
+			document.getElementById("price0").innerHTML=data[0].price;
+			document.getElementById("writer0").innerHTML=data[0].writer;
+			document.getElementById("publisher0").innerHTML=data[0].publisher;
+			document.getElementById("publishedDate0").innerHTML=data[0].publishedDate;
+			document.getElementById("description0").innerHTML=data[0].description;
+			document.getElementById("photo0").src = data[0].photo;
+			
+			document.getElementById("name1").innerHTML=data[1].name;
+			document.getElementById("price1").innerHTML=data[1].price;
+			document.getElementById("writer1").innerHTML=data[1].writer;
+			document.getElementById("publisher1").innerHTML=data[1].publisher;
+			document.getElementById("publishedDate1").innerHTML=data[1].publishedDate;
+			document.getElementById("description1").innerHTML=data[1].description;
+			document.getElementById("photo1").src = data[1].photo;
+			
+			document.getElementById("name2").innerHTML=data[2].name;
+			document.getElementById("price2").innerHTML=data[2].price;
+			document.getElementById("writer2").innerHTML=data[2].writer;
+			document.getElementById("publisher2").innerHTML=data[2].publisher;
+			document.getElementById("publishedDate2").innerHTML=data[2].publishedDate;
+			document.getElementById("description2").innerHTML=data[2].description;
+			document.getElementById("photo2").src = data[2].photo;
+			
+			document.getElementById("name3").innerHTML=data[3].name;
+			document.getElementById("price3").innerHTML=data[3].price;
+			document.getElementById("writer3").innerHTML=data[3].writer;
+			document.getElementById("publisher3").innerHTML=data[3].publisher;
+			document.getElementById("publishedDate3").innerHTML=data[3].publishedDate;
+			document.getElementById("description3").innerHTML=data[3].description;
+			document.getElementById("photo3").src = data[3].photo;
+			
+			document.getElementById("name4").innerHTML=data[4].name;
+			document.getElementById("price4").innerHTML=data[4].price;
+			document.getElementById("writer4").innerHTML=data[4].writer;
+			document.getElementById("publisher4").innerHTML=data[4].publisher;
+			document.getElementById("publishedDate4").innerHTML=data[4].publishedDate;
+			document.getElementById("description4").innerHTML=data[4].description;
+			document.getElementById("photo4").src = data[4].photo;
+			
+			document.getElementById("name5").innerHTML=data[5].name;
+			document.getElementById("price5").innerHTML=data[5].price;
+			document.getElementById("writer5").innerHTML=data[5].writer;
+			document.getElementById("publisher5").innerHTML=data[5].publisher;
+			document.getElementById("publishedDate5").innerHTML=data[5].publishedDate;
+			document.getElementById("description5").innerHTML=data[5].description;
+			document.getElementById("photo5").src = data[5].photo;
+			
+			
+		}
+		
+     }, "json");
 
   }
   
-  function loadInfo()
-  {
-	var offset;
-     $.post('book/loadBookGeneral',{
-		'offset': offset,
-      function(data) {
-		var page = 0;
-		//for(var i=0; i<6 ;i++ )
-		//{
-			document.getElementById("name0").innerHTML=data[page].name;
-			document.getElementById("price0").innerHTML=data[page].price;
-			document.getElementById("writer0").innerHTML=data[page].writer;
-			document.getElementById("publisher0").innerHTML=data[page].publisher;
-			document.getElementById("publishedDate0").innerHTML=data[page].publishedDate;
-			document.getElementById("description0").innerHTML=data[page].description;
-			document.getElementById("photo0").src = data[page].photo;
-		//}
-      
-     }, "json");
-
-  }
   
   </script>
 
