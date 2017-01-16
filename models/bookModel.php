@@ -22,6 +22,7 @@ class bookModel extends CI_Model
 			$post[$i]["counter"] = $rows->counter;
 			$post[$i]["photo"] = $rows->photo;
 			$post[$i]["category"] = $rows->category;
+			$post[$i]["id"] = $rows->id;
 			$i++;
 		}
     	echo json_encode($post);
@@ -46,12 +47,14 @@ class bookModel extends CI_Model
 			$post[$i]["counter"] = $rows->counter;
 			$post[$i]["photo"] = $rows->photo;
 			$post[$i]["category"] = $rows->category;
+			$post[$i]["id"] = $rows->id;
+			
 			$i++;
 		}
     	echo json_encode($post);
     
 	}
-	/*function search($offset, $category, $name, $writer, $publisher, $publishedDate)
+	function search($offset, $category, $name, $writer, $publisher, $publishedDate)
 	{
 		$i=0;
 		$started=0;
@@ -60,35 +63,48 @@ class bookModel extends CI_Model
 		$publisher = trim($publisher);
 		$publishedDate = trim($publishedDate);
 		$category = trim($category);
-		$commandName = "`name` = '".$name"'";
-		$commandWriter = "`writer` = '".$writer"'";
-		$commandPublisher = "`publisher` = '".$publisher"'";
-		$commandPublishedDate = "`publishedDate` = '".$publishedDate"'";
-		$commandCategory = "`category` = '".$category"'";
+		$commandName = "`name` = '".$name."'";
+		$commandWriter = "`writer` = '".$writer."'";
+		$commandPublisher = "`publisher` = '".$publisher."'";
+		$commandPublishedDate = "`publishedDate` = '".$publishedDate."'";
+		$commandCategory = "`category` = '".$category."'";
 		$sql = "SELECT * FROM `book` ";
 		if($name!=null && $name!="")
 		{
 			$sql .= "WHERE ".$commandName." AND ";
+			$started=1;
 		}
 		
 		if($writer!=null && $writer!="")
 		{
-			$sql .= "WHERE ".$commandWriter." AND ";		
+			if($started==0)
+				$sql .= "WHERE ";
+			$sql .= $commandWriter." AND ";
+			$started=1;
 		}
 		if($publisher !=null && $publisher!="")
 		{
-			$sql .= "WHERE ".$commandPublisher." AND ";
+			if($started==0)
+				$sql .= "WHERE ";
+			$sql .= $commandPublisher." AND ";
+			$started=1;
 		}
 		if($publishedDate!=null && $publishedDate!="")
 		{
-			$sql .= "WHERE ".$commandPublishedDate." AND ";
+			if($started==0)
+				$sql .= "WHERE ";
+			$sql .= $commandPublishedDate." AND ";
+			$started=1;
 		}
 		if($category!=null && $category!="")
 		{
-			$sql .= "WHERE ".$commandCategory." AND ";	
+			if($started==0)
+				$sql .= "WHERE ";
+			$sql .= $commandCategory." AND ";
+			$started=1;
 		}
 		
-		$sql = substr( $str1, 0, -4 );
+		$sql = substr( $sql, 0, -4 );
 		echo $sql;
 		$sql .= "LIMIT 6 OFFSET ".$offset;
 		
@@ -105,11 +121,13 @@ class bookModel extends CI_Model
 			$post[$i]["counter"] = $rows->counter;
 			$post[$i]["photo"] = $rows->photo;
 			$post[$i]["category"] = $rows->category;
+			$post[$i]["id"] = $rows->id;
+			
 			$i++;
 		}
     	echo json_encode($post);
     
-	}*/
+	}
 
 	function add($name, $writer, $publishedDate, $publisher, $description, $price, $count, $photo, $category)
 	{
