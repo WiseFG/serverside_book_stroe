@@ -63,6 +63,9 @@ include_once 'includes/functions.php';
                                 if (login_check($mysqli) == true) {?>
                                 <li><a href="login/logout"><i class="fa fa-shopping-cart"></i>خروج</a></li>
                                 <?php } ?>
+
+                          		<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
+
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
 								<li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
 								<li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
@@ -215,7 +218,18 @@ include_once 'includes/functions.php';
 						
 							
 						</div><!--/category-products-->
+						
+						<h2>رهگیری خرید</h2>
+						<div class="panel-group category-products" style="direction:rtl;"><!--category-productsr-->
+						  <input id="invoiceID" type="text" style="margin-right: 45px; margin-bottom: 10px;" placeholder="کد رهگیری" background="#f0f0e9">
+
+						 <a class="btn btn-default update" style="margin-right: 45px;margin-bottom: 10px; margin-top: 0px;" onclick="track()">جستجو</a>
+                          <input  id="place" type="text" style="margin-right: 45px;margin-bottom: 10px;">
+
+						  <input id="sts" type="text" style="margin-right: 45px;margin-bottom: 10px;">
+
 					
+						</div>
 					</div>
 				</div>
 				
@@ -440,6 +454,9 @@ include_once 'includes/functions.php';
 		var offset;
   
 		window.onload = function (){
+			document.getElementById("sts").style.display="none";
+			document.getElementById("place").style.display="none";
+
 		loadInfo();
 		}
 
@@ -541,6 +558,34 @@ include_once 'includes/functions.php';
 	loadInfo();
   }
   
+
+    function track()
+    {
+    	var invoiceID = document.getElementById("invoiceID").value;
+      
+    	if((invoiceID!=""))
+    	{
+        
+        	$.post('home/track', {
+        	'invoiceID' : invoiceID},
+         	function(data) {  
+         		if(data != null)
+         		{ 
+         			var place = document.getElementById("place");
+         			var status = document.getElementById("status");
+
+         			place.innerHTML=data[0].place;
+         			status.innerHTML=data[0].status;
+
+         			place.style.display="block";
+         			status.style.display="block";
+         		}
+
+        	}, "json");
+        
+    	
+    	}
+    }
   </script>
 
 
