@@ -49,17 +49,17 @@ include_once 'includes/functions.php';
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" height="50" width="100"></a>
+                            <a href="index"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" height="50" width="100"></a>
                         </div>
                         
                     </div>
                    <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="login.html"><i class="fa fa-lock"></i>ورود</a></li>
-                                <li><a href="profile.html"><i class="fa fa-user"></i> حساب کاربری</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
+                                <li><a href="login"><i class="fa fa-lock"></i>ورود</a></li>
+                                <li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
+                                <li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
+                                <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
                             </ul>
                         </div>
                     </div>
