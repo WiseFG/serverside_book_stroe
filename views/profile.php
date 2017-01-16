@@ -57,7 +57,7 @@ include_once 'includes/functions.php';
                                 <li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
                                 <li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
-			        <li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
+				<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
 
                                 <?php 
                                 sec_session_start();
@@ -273,41 +273,9 @@ include_once 'includes/functions.php';
 
 
 
-<div class="form-group col-md-12">
-  <!--<label class="col-md-10 control-label">انتخاب کلمه عبور</label>  -->
-  <div class="col-md-12 inputGroupContainer">
-  <div class="input-group">
-  <input  name="first_name" placeholder="انتخاب کلمه عبور" class="form-control"  type="password">
-    </div>
-  </div>
-</div>
 
 
 
-<div class="form-group col-md-12" >
-<!--  <label class="col-md-10 control-label">تایید کلمه عبور</label>  -->
-  <div class="col-md-12 inputGroupContainer">
-  <div class="input-group">
-  <input  name="first_name" placeholder="تایید کلمه عبور" class="form-control"  type="password">
-    </div>
-  </div>
-</div>
-
-
-<!-- radio checks -->
- <div class="form-group col-md-12" >
-
-    <span class="text-left uplod-picture" style="float:left;">
-    
-    <span class="btn btn-default uplod-file">
-        اضافه کردن عکس <input type="file" />
-    </span>
-
-    
-  </span><!--col-md-12 close-->
-</div>
-
-<!-- upload profile picture -->
 
 <!-- Button -->
 <div class="form-group col-md-2" style="float:right; position: relative; right: 600px;">
