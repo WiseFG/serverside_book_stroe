@@ -73,7 +73,7 @@ include_once 'includes/functions.php';
                     <div class="col-sm-14">
                         <div class="mainmenu pull-right">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-				<li><a href="home">خانه</a></li>
+				                <li><a href="home">خانه</a></li>
                                 <li><a href="shop">محصولات</a></li>
                                 <li><a href="search">جستجو</a></li>
                                 <li><a href="contact_us">تماس با ما</a></li>
@@ -104,8 +104,7 @@ include_once 'includes/functions.php';
                             <form>
                                 <select id="invoiceID" style="height:39px; margin-bottom: 10px;" onchange="loadInfo()">
                                     <option>-- کد رهگیری --</option>
-                                    <option>1</option>
-                                    <option>2</option>
+                                    
 
                                 </select>
 
@@ -126,8 +125,8 @@ include_once 'includes/functions.php';
                                         <option>تحویل داده شده</option>
                                     </select>
                                     <input id="changed_place" type="text" style="margin-bottom: 10px;" placeholder="مکان">
-                                        <a class="btn btn-default update" style="width: 100%;
-                                            font-weight: 300;padding: 10px; margin-top: 0px;" onclick="save()">بروزرسانی وضعیت و مکان</a>
+                                    <a class="btn btn-default update" style="width: 100%;
+                                            font-weight: 300;padding: 10px; margin-top: 0px;" onclick=save();>بروزرسانی وضعیت و مکان</a>
                                 </form>
                             </div>
                         </div>
@@ -136,6 +135,9 @@ include_once 'includes/functions.php';
             </div>
             <div class="review-payment" id="tableTitle" style="direction: rtl;">
                 <h2>اطلاعات  و وضعیت خرید</h2>
+                <input id="place" style="margin-bottom: 10px;" placeholder="مکان" type="text" disabled="">
+                <input id="sts" style="margin-bottom: 10px;" placeholder="مکان" type="text" disabled="">
+
             </div>
 
             <div class="table-responsive cart_info" style="direction: rtl;" id="tableInvoiceDetail">
@@ -213,8 +215,8 @@ include_once 'includes/functions.php';
 
     document.getElementById("totalTable").style.display="none";
     
-    
-    
+    document.getElementById("place").style.display="none";
+    document.getElementById("sts").style.display="none";
 
 
     loadInvoiceID();
@@ -222,15 +224,18 @@ include_once 'includes/functions.php';
   } 
 
 function loadInvoiceID()
-  {
+  {      
+
 
      $.post('statusadmin/loadInvoiceID',
       function(data) {
+
+
       for(var i=0; i<data.length; i++)
       {
         var selectInvoiceID = document.getElementById("invoiceID");
         var option = document.createElement("option");
-        option.value = data[i].invoiceID;
+        option.appendChild(document.createTextNode(data[i]["invoiceID"]));
         selectInvoiceID.appendChild(option);
       }
      }, "json");
@@ -239,9 +244,16 @@ function loadInvoiceID()
 
  function loadInfo()
   {
+     document.getElementById("place").placeholder = "";
+    document.getElementById("sts").placeholder = "";
+
+     document.getElementById("changed_place").value="";
+     document.getElementById("changed_status").value="-- کد رهگیری --";
+
      if(document.getElementById("invoiceID").value != "-- کد رهگیری --")
      {
         $("#tableInvoiceDetail tbody").empty();
+
 
 
         var selectedID = document.getElementById("invoiceID").value;
@@ -249,33 +261,50 @@ function loadInvoiceID()
         'invoiceID' :  selectedID},
         function(data) {
 
-
         var table_invoice = document.getElementById("tableInvoiceDetail");
 
         for(var i=0; i<data.length; i++)
         {
-            var row = document.createElement('tr');
+            //var row = document.createElement('tr');
             
-            var photo = document.createElement('td');
-            var writer = document.createElement('td');
-            var category = document.createElement('td');
+            var name = data[i].name;
+            var writer = data[i].writer;
+            var category = data[i].category;
+            var publishedDate = data[i].publishedDate;
+            var publisher = data[i].publisher;
+            var price = data[i].price;
+            var counter = data[i].counter;
+            var place;
+            var sts;
+
+            var total = price*counter;
+
+            $.post('statusadmin/loadPlace', {
+             'invoiceID' :  selectedID},
+            function(data2) {
+
+                place = data2[0].place;
+                sts = data2[0].sts;
+
+                document.getElementById("place").placeholder = place;
+                document.getElementById("place").style.display="block";
+                document.getElementById("sts").placeholder = sts;
+                document.getElementById("sts").style.display="block";
 
 
-            var photoText = document.createTextNode(data[i].photo);
-            photo.appendChild(photoText);
-        
-            var writerText = document.createTextNode(data[i].writer);
-            photo.appendChild(writerText);
+            }, "json");
 
-            var categoryText = document.createTextNode(data[i].category);
-            photo.appendChild(categoryText);
 
-            row.appendChild(photo);
-            row.appendChild(writer);
-            row.appendChild(category);
 
-            table_invoice.appendChild(row);
+
+
+
+           
+            var newRowContent = "<tr align=\"center\"><td style=\" padding-right:190px; margin-left: 200px;\"  class=\"cart_product\"><a>" + name + "</a></td> <td c style=\"padding-right: 30px;\" lass=\"cart_description\"><p>نام نویسنده: " + writer+ "</p><p>دسته بندی: " + writer + "</p><p>سال انتشار: " + publishedDate + "</p><p>ناشر: " + publisher + "</p></td><td style=\"padding-right: 180px;\" class=\"cart_price\"><p>" + price + " تومان" + "</p></td><td style=\"padding-right:140px;\" class=\"cart_quantity\"><div class=\"cart_quantity_button\"><input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value= " + counter + " size=\"2\"></div></td><td style=\"padding-right:115px;\" class=\"cart_total\"><p class=\"cart_total_price\">" + total + " تومان"+ "</p></td></tr>";
+
+            $(newRowContent).appendTo($("#tableInvoiceDetail"));  
         }
+
      }, "json");
     }
   }
@@ -285,11 +314,15 @@ function loadInvoiceID()
     var status = document.getElementById("changed_status").value;
     var invoiceID = document.getElementById("invoiceID").value;
       
+   document.getElementById("place").placeholder = place;
+      document.getElementById("sts").placeholder = status;
+
+
     if((invoiceID!="-- کد رهگیری --") && (place != "") && (status!="-- وضعیت --"))
     {
         
-        $.post('statusadmin/update', {
-        'place' : place , 'status' : status},
+        $.post('statusadmin/updateInfo', {
+        'place' : place , 'status' : status, 'invoiceID':invoiceID},
          function(data) {   
 
         }, "json");
@@ -298,9 +331,8 @@ function loadInvoiceID()
         {
             $("#invoiceID option:selected").remove();
         }
-    
-        loadInfo();
     }
+
 
   }
 
