@@ -59,11 +59,11 @@ include_once 'includes/functions.php';
                                 if (login_check($mysqli) == true) {?>
                                 <li><a href="login/logout"><i class="fa fa-shopping-cart"></i>خروج</a></li>
                                 <?php } ?>
-                              
-								 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
-								<li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
-								<li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
-								<li><a href="login"><i class="fa fa-lock"></i>ورود</a></li>
+                               		<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
+					<li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
+					<li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
+					<li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
+					<li><a href="login"><i class="fa fa-lock"></i>ورود</a></li>
                             </ul>
                         </div>
                     </div>
