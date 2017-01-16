@@ -54,31 +54,39 @@ class bookModel extends CI_Model
     	echo json_encode($post);
     
 	}
-	/*function loadBookId($id)
+	function loadBookId()
 	{
-		$i=0;
+		$info = "SELECT givenid FROM `information`";
+		$result2 = $this->db->query($info);
+		$id=array();
+		foreach($result2->result() as $rows)
+		{
+			$id[0]["givenid"] = $rows->givenid;
+			break;
+		}
 		$sql = "SELECT * FROM `book` 
-			 WHERE `id` = '". $id ."';
+			 WHERE id = ". $id[0]["givenid"];
 		$result = $this->db->query($sql);
 		$post=array();
 		foreach($result->result() as $rows)
 		{
-			$post[$i]["name"] = $rows->name;
-			$post[$i]["publisher"] = $rows->publisher;
-			$post[$i]["writer"] = $rows->writer;
-			$post[$i]["publishedDate"] = $rows->publishedDate;
-			$post[$i]["description"] = $rows->description;
-			$post[$i]["price"] = $rows->price;
-			$post[$i]["counter"] = $rows->counter;
-			$post[$i]["photo"] = $rows->photo;
-			$post[$i]["category"] = $rows->category;
-			$post[$i]["id"] = $rows->id;
-			
-			$i++;
+			$post[0]["name"] = $rows->name;
+			$post[0]["publisher"] = $rows->publisher;
+			$post[0]["writer"] = $rows->writer;
+			$post[0]["publishedDate"] = $rows->publishedDate;
+			$post[0]["description"] = $rows->description;
+			$post[0]["price"] = $rows->price;
+			$post[0]["counter"] = $rows->counter;
+			$post[0]["photo"] = $rows->photo;
+			$post[0]["category"] = $rows->category;
+			$post[0]["id"] = $rows->id;
+			break;
 		}
-    	return;
+		$info2 = "TRUNCATE TABLE `information` ";
+		$this->db->query($info2);
+    	echo json_encode($post);
     
-	}*/
+	}
 	function search($offset, $category, $name, $writer, $publisher, $publishedDate)
 	{
 		$i=0;
