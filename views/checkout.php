@@ -242,7 +242,7 @@ if (login_check($mysqli) == true) {
 
 					</table>
 
-                    <a style="display:block;margin-left:33%;margin-right:33%;" class="btn btn-primary" href="bank.html">ادامه</a>
+                    <a style="display:block;margin-left:33%;margin-right:33%;" class="btn btn-primary" href="bank">ادامه</a>
                 </div>
 			</div>
         </div>
