@@ -99,28 +99,26 @@ include_once 'includes/functions.php';
 					<div class="product-details"><!--product-details-->
 					<div class="col-sm-5">
 							<div class="view-product">
-								<img src="<?php echo base_url();?>assets/images/product-details/1.jpg" alt="" style="height: 350px; width: 250px;">
+								<img id="photo" style="height: 350px; width: 250px;">
 							</div>
 
 						</div>
 						<div class="col-sm-7" style="direction: rtl; ">
 							<div class="product-information"><!--/product-information-->
-								<h2>نام کتاب</h2>
-								<p>نام نویسنده</p>
-								<p>انتشارات</p>
-								<p>سال چاپ</p>
-								<p>خلاصه</p>
+								<p>نام کتاب : <label id="name"></label></p>
+								<p>نویسنده : <label id="writer"></label></p>
+								<p>ناشر : <label id="publisher"></label></p>
+								<p>سال چاپ : <label id="publishedDate"></label></p>
+								<p>خلاصه : <label id="description"></label></p>
 								<span>
-									<span>59 تومان</span>
+									<p>قیمت : <label id="price"></label></p>
 									<label>تعداد : </label>
-									<input type="text" value="3" />
+									<input type="text" id="counter" />
 									<button type="button" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										افزودن به سبد خرید
 									</button>
 								</span>
-								<p><b>دسترس پذیری:</b> در انبار</p>
-								<p><b>وضعیت:</b> جدید</p>
 								
 							</div><!--/product-information-->
 						</div>
@@ -134,75 +132,7 @@ include_once 'includes/functions.php';
 		</div>
 				
 	</section>
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3" style="float:right" >
-					<div class="left-sidebar">
-						<h2>دسته بندی</h2>
-						<div class="panel-group category-products" id="accordian" style="direction:rtl;"><!--category-productsr-->
-						
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-left"><i class="fa fa-plus"></i></span>
-											آموزشی
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="shop.html">گروه سنی کودکان</a></li>
-											<li><a href="shop.html">گروه سنی نوجوانان</a></li>
-											<li><a href="shop.html">گروه سنی جوانان</a></li>
-										
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">پژوهشی</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">ادبیات</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">کودک و نوجوان</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">تاریخی</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">سلامت</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop.html">رمان</a></h4>
-								</div>
-							</div>
-						
-							
-						</div><!--/category-products-->
-					
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 	
 	<footer id="footer"><!--Footer-->
 		<div class="footer-top">
@@ -225,7 +155,36 @@ include_once 'includes/functions.php';
 		</div>
 		
 	</footer><!--/Footer-->
+	<script type="text/javascript">
 	
+		window.onload = function (){
+		loadInfo();
+		}
+
+  function loadInfo()
+  {
+     $.post('book/loadBookId',
+      function(data) {
+		{
+			document.getElementById("name").innerHTML=data[0].name;
+			document.getElementById("price").innerHTML=data[0].price;
+			document.getElementById("writer").innerHTML=data[0].writer;
+			document.getElementById("publisher").innerHTML=data[0].publisher;
+			document.getElementById("publishedDate").innerHTML=data[0].publishedDate;
+			document.getElementById("description").innerHTML=data[0].description;
+			document.getElementById("photo").src = data[0].photo;
+			document.getElementById("counter").value=data[0].counter;
+			
+			
+		}
+		
+     }, "json");
+
+  }
+  
+  </script>
+
+
 
   
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>

@@ -103,54 +103,39 @@ include_once 'includes/functions.php';
 						
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" >
-											<span class="badge pull-left"><i class="fa fa-plus"></i></span>
-											آموزشی
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="shop">گروه سنی کودکان</a></li>
-											<li><a href="shop">گروه سنی نوجوانان</a></li>
-											<li><a href="shop">گروه سنی جوانان</a></li>
-										
-										</ul>
-									</div>
+									<h4 class="panel-title"><a href="shop">آموزشی</a></h4>
 								</div>
 							</div>
 							
 							
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop">پژوهشی</a></h4>
+									<h4 class="panel-title"><a href="shop" id="research">پژوهشی</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop">ادبیات</a></h4>
+									<h4 class="panel-title"><a href="shop" id="litrature">ادبیات</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop">کودک و نوجوان</a></h4>
+									<h4 class="panel-title"><a href="shop" id="kids">کودک و نوجوان</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop">تاریخی</a></h4>
+									<h4 class="panel-title"><a href="shop" id="history">تاریخی</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop">سلامت</a></h4>
+									<h4 class="panel-title"><a href="shop" id="health">سلامت</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop">رمان</a></h4>
+									<h4 class="panel-title"><a href="shop" id="story">رمان</a></h4>
 								</div>
 							</div>
 						
@@ -337,6 +322,12 @@ include_once 'includes/functions.php';
 						
 					</div><!--features_items-->
 					
+					<ul class="pagination" style="margin-right: 275px;">
+                                        <li><a href="#" onclick=decOffset();>قبلی</a></li>
+                                        <li class="active" ><a id=currentPage></a></li>
+                                        <li><a href="#" onclick=incOffset();>بعدی</a></li>
+                                    </ul>
+					
 					<div class="recommended_items"><!--recommended_items-->
 						
 						
@@ -450,6 +441,8 @@ include_once 'includes/functions.php';
 		'offset' : offset},
       function(data) {
 		{
+			document.getElementById("currentPage").innerHTML= offset+1;
+			
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
 			document.getElementById("writer0").innerHTML=data[0].writer;
@@ -512,14 +505,16 @@ include_once 'includes/functions.php';
   function incOffset()
   {
 	<?php echo json_encode(inc_offset()) ?>;
+	offset = <?php echo json_encode(get_offset()) ?>;
+	//alert(offset);
 	loadInfo();
   }
   function decOffset()
   {
-	var temp = <?php echo json_encode(get_offset()) ?>;
-	if(temp>0)
+	if(offset>0)
 	{
 		<?php echo json_encode(dec_offset()) ?>;
+		offset = <?php echo json_encode(get_offset()) ?>;
 	}
 	loadInfo();
   }
