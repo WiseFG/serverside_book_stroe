@@ -22,4 +22,12 @@ class Bank extends CI_Controller {
 	{
 		$this->load->view('bank');
 	}
+	public function cancelPay()
+	{
+		//cancelPay
+		$userId=$this->input->post('userid');
+		$this->load->model('bankModel');
+		$res=$this->bankModel->cancelPay($userId);
+
+	}
 }
