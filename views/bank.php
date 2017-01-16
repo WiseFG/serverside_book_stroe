@@ -112,7 +112,7 @@
 									<input type="email" placeholder="ایمیل اختیاری" />
 									<span style="display:inline-block" >
 										<button style="float:right;margin-left:40px;" type="submit" class="btn">پرداخت</button>
-										<button type="button" style="float:left;margin-left:70px;" class="btn">انصراف</button>
+										<button type="button" style="float:left;margin-left:70px;" onclick=cancelPay(); class="btn">انصراف</button>
 									</span>
 								</form>
 							</div><!--/login form-->
@@ -189,4 +189,17 @@
 		direction:rtl;
 	}
 </style>
+<script type="text/javascript">
+	   var userid=<?php echo json_encode(get_userId()); ?> 
+   
+  function cancelPay()
+  {
+     $.post('bank/cancelPay', {
+      'userid' : userid },
+      function(data) {
+     }, "json");
+
+  }
+  
+</script>
 </html>
