@@ -1,4 +1,4 @@
-﻿<?php
+?<?php
 
 /*
  * Copyright (C) 2013 peredur.net
@@ -75,7 +75,6 @@ function login($username, $password, $mysqli) {
                     $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
 
                     $_SESSION['username'] = $username;
-			$_SESSION['offset'] = 0;
                     $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
 
                     
@@ -105,12 +104,12 @@ function get_username()
 
 function set_offset($input)
 {
-    $_SESSION['offset']=$input;
+    $GLOBALS['offset']=$input;
 }
 
 function get_offset()
 {
-    return  $_SESSION['offset'];
+    return  $GLOBALS['offset'];
 }
 
 
@@ -191,5 +190,4 @@ function esc_url($url) {
         return $url;
     }
 }
-
 
