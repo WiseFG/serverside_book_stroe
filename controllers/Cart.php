@@ -29,4 +29,11 @@ class Cart extends CI_Controller {
 		$this->load->model('cartModel');
 		$res=$this->cartModel->loadInfo($usename);
 	}
+	 public function insert()
+	{
+		$userid= $this->input->post('userid');
+		$bookId= $this->input->post('bookId');		
+		$this->load->model('cartModel');
+		$res=$this->cartModel->insert($userid,$bookId);
+	}
 }
