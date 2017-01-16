@@ -183,6 +183,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher0"></label></p>
 												<p>سال چاپ : <label id="publishedDate0"></label></p>
 												<p>خلاصه : <label id="description0"></label></p>
+												<label style="display: none"; id="id0"></label>
 												</div>
 												<h2><label id="price0"></label></h2>
 												<p><label id="name0"></label></p>
@@ -210,6 +211,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher1"></label></p>
 												<p>سال چاپ : <label id="publishedDate1"></label></p>
 												<p>خلاصه : <label id="description1"></label></p>
+												<label style="display: none"; id="id1"></label>
 												</div>
 												<h2><label id="price1"></label></h2>
 												<p><label id="name1"></label></p>
@@ -237,6 +239,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher2"></label></p>
 												<p>سال چاپ : <label id="publishedDate2"></label></p>
 												<p>خلاصه : <label id="description2"></label></p>
+												<label style="display: none"; id="id2"></label>
 												</div>
 												<h2><label id="price2"></label></h2>
 												<p><label id="name2"></label></p>
@@ -264,6 +267,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher3"></label></p>
 												<p>سال چاپ : <label id="publishedDate3"></label></p>
 												<p>خلاصه : <label id="description3"></label></p>
+												<label style="display: none"; id="id3"></label>
 												</div>
 												<h2><label id="price3"></label></h2>
 												<p><label id="name3"></label></p>
@@ -291,6 +295,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher4"></label></p>
 												<p>سال چاپ : <label id="publishedDate4"></label></p>
 												<p>خلاصه : <label id="description4"></label></p>
+												<label style="display: none"; id="id4"></label>
 												</div>
 												<h2><label id="price4"></label></h2>
 												<p><label id="name4"></label></p>
@@ -318,6 +323,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher5"></label></p>
 												<p>سال چاپ : <label id="publishedDate5"></label></p>
 												<p>خلاصه : <label id="description5"></label></p>
+												<label style="display: none"; id="id5"></label>
 												</div>
 												<h2><label id="price5"></label></h2>
 												<p><label id="name5"></label></p>
@@ -404,6 +410,10 @@ include_once 'includes/functions.php';
 		var offset ;
 	   
 		window.onload = function (){
+			
+		 <?php echo json_encode(set_offset(0)); ?>;
+		 offset =<?php echo json_encode(get_offset()); ?>;
+	
 		loadInfo();
 		}
 
@@ -436,14 +446,9 @@ include_once 'includes/functions.php';
   }
   function loadInfo()
   {
-	 <?php echo json_encode(set_offset(0)); ?>;
-	 offset =<?php echo json_encode(get_offset()); ?>;
-	
      $.post('book/loadBookGeneral',{
 		'offset' : offset},
       function(data) {
-		//var i=0 ;
-		//for($i=0; $i<6; $i++)
 		{
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
@@ -506,14 +511,15 @@ include_once 'includes/functions.php';
   }
   function incOffset()
   {
-	<?php echo json_encode(set_offset(get_offset()+1)) ?>;
+	<?php echo json_encode(inc_offset()) ?>;
 	loadInfo();
   }
   function decOffset()
   {
+	var temp = <?php echo json_encode(get_offset()) ?>;
 	if(temp>0)
 	{
-		<?php echo json_encode(set_offset(get_offset()-1)) ?>;
+		<?php echo json_encode(dec_offset()) ?>;
 	}
 	loadInfo();
   }

@@ -63,9 +63,7 @@ include_once 'includes/functions.php';
                                 if (login_check($mysqli) == true) {?>
                                 <li><a href="login/logout"><i class="fa fa-shopping-cart"></i>خروج</a></li>
                                 <?php } ?>
-
-                          		<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
-
+								<li><a href="statusadmin"><i class="fa fa-map-marker"></i> رهگیری</a></li>
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
 								<li><a href="checkout"><i class="fa fa-crosshairs"></i> صورت حساب</a></li>
 								<li><a href="profile"><i class="fa fa-user"></i> حساب کاربری</a></li>
@@ -218,8 +216,7 @@ include_once 'includes/functions.php';
 						
 							
 						</div><!--/category-products-->
-						
-						<h2>رهگیری خرید</h2>
+					<h2>رهگیری خرید</h2>
 						<div class="panel-group category-products" style="direction:rtl;"><!--category-productsr-->
 						  <input id="invoiceID" type="text" style="margin-right: 45px; margin-bottom: 10px;" placeholder="کد رهگیری" background="#f0f0e9">
 
@@ -230,6 +227,7 @@ include_once 'includes/functions.php';
 
 					
 						</div>
+					
 					</div>
 				</div>
 				
@@ -310,6 +308,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher2"></label></p>
 												<p>سال چاپ : <label id="publishedDate2"></label></p>
 												<p>خلاصه : <label id="description2"></label></p>
+												<label style="display: none"; id="id2"></label>
 												</div>
 												<h2><label id="price2"></label></h2>
 												<p><label id="name2"></label></p>
@@ -337,6 +336,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher3"></label></p>
 												<p>سال چاپ : <label id="publishedDate3"></label></p>
 												<p>خلاصه : <label id="description3"></label></p>
+												<label style="display: none"; id="id3"></label>
 												</div>
 												<h2><label id="price3"></label></h2>
 												<p><label id="name3"></label></p>
@@ -364,6 +364,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher4"></label></p>
 												<p>سال چاپ : <label id="publishedDate4"></label></p>
 												<p>خلاصه : <label id="description4"></label></p>
+												<label style="display: none"; id="id4"></label>
 												</div>
 												<h2><label id="price4"></label></h2>
 												<p><label id="name4"></label></p>
@@ -391,6 +392,7 @@ include_once 'includes/functions.php';
 												<p>ناشر : <label id="publisher5"></label></p>
 												<p>سال چاپ : <label id="publishedDate5"></label></p>
 												<p>خلاصه : <label id="description5"></label></p>
+												<label style="display: none"; id="id5"></label>
 												</div>
 												<h2><label id="price5"></label></h2>
 												<p><label id="name5"></label></p>
@@ -451,25 +453,16 @@ include_once 'includes/functions.php';
 	</footer><!--/Footer-->
 	
 	<script type="text/javascript">
-		var offset;
-  
+	
 		window.onload = function (){
-			document.getElementById("sts").style.display="none";
-			document.getElementById("place").style.display="none";
-
 		loadInfo();
 		}
 
   function loadInfo()
   {
-	 <?php echo json_encode(set_offset(0)); ?>;
-	 offset =<?php echo json_encode(get_offset()); ?>;
-	
      $.post('book/loadBookGeneral',{
-		'offset' : offset},
+		'offset' : 0},
       function(data) {
-		//var i=0 ;
-		//for($i=0; $i<6; $i++)
 		{
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
@@ -544,22 +537,7 @@ include_once 'includes/functions.php';
      }, "json");
 
   }*/
-  function incOffset()
-  {
-	<?php echo json_encode(set_offset(get_offset()+1)) ?>;
-	loadInfo();
-  }
-  function decOffset()
-  {
-	if(temp>0)
-	{
-		<?php echo json_encode(set_offset(get_offset()-1)) ?>;
-	}
-	loadInfo();
-  }
-  
-
-    function track()
+  function track()
     {
     	var invoiceID = document.getElementById("invoiceID").value;
       

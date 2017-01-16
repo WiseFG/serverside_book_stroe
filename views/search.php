@@ -137,7 +137,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer0"></label></p>
 												<p>ناشر : <label id="publisher0"></label></p>
 												<p>سال چاپ : <label id="publishedDate0"></label></p>
@@ -164,7 +164,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id1")><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer1"></label></p>
 												<p>ناشر : <label id="publisher1"></label></p>
 												<p>سال چاپ : <label id="publishedDate1"></label></p>
@@ -191,7 +191,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer2"></label></p>
 												<p>ناشر : <label id="publisher2"></label></p>
 												<p>سال چاپ : <label id="publishedDate2"></label></p>
@@ -218,7 +218,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer3"></label></p>
 												<p>ناشر : <label id="publisher3"></label></p>
 												<p>سال چاپ : <label id="publishedDate3"></label></p>
@@ -245,7 +245,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer4"></label></p>
 												<p>ناشر : <label id="publisher4"></label></p>
 												<p>سال چاپ : <label id="publishedDate4"></label></p>
@@ -272,7 +272,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer5"></label></p>
 												<p>ناشر : <label id="publisher5"></label></p>
 												<p>سال چاپ : <label id="publishedDate5"></label></p>
@@ -294,11 +294,9 @@ include_once 'includes/functions.php';
                                     
                             
                                     <ul class="pagination" style="margin-right: 275px;">
-                                        <li><a href="#">1</a></li>
-                                        <li class="active"><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">بعدی</a></li>
+                                        <li><a href="#" onclick=decOffset();>قبلی</a></li>
+                                        <li class="active" ><a id=currentPage></a></li>
+                                        <li><a href="#" onclick=incOffset();>بعدی</a></li>
                                     </ul>
                                     
                                 </div>
@@ -340,21 +338,33 @@ include_once 'includes/functions.php';
 		var offset;
   
 	   
-		window.onload = function (){
+		window.onload = function (){	
+		<?php echo json_encode(set_offset(0)); ?>;
+		offset =0;
 		loadInfo();
 		}
 
+	function showDetails(inputId)
+	{
+		var id = document.getElementById(inputId).innerHTML;
+			
+		$.post('book/saveid',{
+		'id' : id},
+      function(data) {
+		
+		}, "json");
+		
+	}
   function loadInfo()
   {
-	 <?php echo json_encode(set_offset(0)); ?>;
-	 offset =<?php echo json_encode(get_offset()); ?>;
 	
      $.post('book/loadBookGeneral',{
 		'offset' : offset},
       function(data) {
-		//var i=0 ;
-		//for($i=0; $i<6; $i++)
 		{
+			//alert(offset);
+			document.getElementById("currentPage").innerHTML= offset+1;
+			
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
 			document.getElementById("writer0").innerHTML=data[0].writer;
@@ -426,6 +436,7 @@ include_once 'includes/functions.php';
      }, "json");
 
   }*/
+
   function searchAll()
   {
 	 var name=document.getElementById("wantedName").value;
@@ -498,18 +509,20 @@ include_once 'includes/functions.php';
   }
   function incOffset()
   {
-	<?php echo json_encode(set_offset(get_offset()+1)) ?>;
+	<?php echo json_encode(inc_offset()) ?>;
+	offset = <?php echo json_encode(get_offset()) ?>;
+	//alert(offset);
 	loadInfo();
   }
   function decOffset()
   {
-	if(temp>0)
+	if(offset>0)
 	{
-		<?php echo json_encode(set_offset(get_offset()-1)) ?>;
+		<?php echo json_encode(dec_offset()) ?>;
+		offset = <?php echo json_encode(get_offset()) ?>;
 	}
 	loadInfo();
   }
-  
   </script>
 
 
