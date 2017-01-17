@@ -137,7 +137,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id0") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer0"></label></p>
 												<p>ناشر : <label id="publisher0"></label></p>
 												<p>سال چاپ : <label id="publishedDate0"></label></p>
@@ -191,7 +191,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id2") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer2"></label></p>
 												<p>ناشر : <label id="publisher2"></label></p>
 												<p>سال چاپ : <label id="publishedDate2"></label></p>
@@ -218,7 +218,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id3") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer3"></label></p>
 												<p>ناشر : <label id="publisher3"></label></p>
 												<p>سال چاپ : <label id="publishedDate3"></label></p>
@@ -245,7 +245,7 @@ include_once 'includes/functions.php';
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id4") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer4"></label></p>
 												<p>ناشر : <label id="publisher4"></label></p>
 												<p>سال چاپ : <label id="publishedDate4"></label></p>
@@ -364,7 +364,78 @@ include_once 'includes/functions.php';
 		{
 			//alert(offset);
 			document.getElementById("currentPage").innerHTML= offset+1;
-			
+			if(data[0]===null)
+			{
+				document.getElementById("name0").innerHTML="";
+				document.getElementById("price0").innerHTML="";
+				document.getElementById("writer0").innerHTML="";
+				document.getElementById("publisher0").innerHTML="";
+				document.getElementById("publishedDate0").innerHTML="";
+				document.getElementById("description0").innerHTML="";
+				document.getElementById("photo0").src = "";
+				document.getElementById("id0").innerHTML="";
+				
+			}
+			if(data[1]===null)
+			{
+				document.getElementById("name1").innerHTML="";
+				document.getElementById("price1").innerHTML="";
+				document.getElementById("writer1").innerHTML="";
+				document.getElementById("publisher1").innerHTML="";
+				document.getElementById("publishedDate1").innerHTML="";
+				document.getElementById("description1").innerHTML="";
+				document.getElementById("photo1").src = "";
+				document.getElementById("id1").innerHTML="";
+				
+			}
+			if(data[2]===null)
+			{
+				document.getElementById("name2").innerHTML="";
+				document.getElementById("price2").innerHTML="";
+				document.getElementById("writer2").innerHTML="";
+				document.getElementById("publisher2").innerHTML="";
+				document.getElementById("publishedDate2").innerHTML="";
+				document.getElementById("description2").innerHTML="";
+				document.getElementById("photo2").src = "";
+				document.getElementById("id2").innerHTML="";
+				
+			}
+			if(data[3]===null)
+			{
+				document.getElementById("name3").innerHTML="";
+				document.getElementById("price3").innerHTML="";
+				document.getElementById("writer3").innerHTML="";
+				document.getElementById("publisher3").innerHTML="";
+				document.getElementById("publishedDate3").innerHTML="";
+				document.getElementById("description3").innerHTML="";
+				document.getElementById("photo3").src = "";
+				document.getElementById("id3").innerHTML="";
+				
+			}
+			if(data[4]===null)
+			{
+				document.getElementById("name4").innerHTML="";
+				document.getElementById("price4").innerHTML="";
+				document.getElementById("writer4").innerHTML="";
+				document.getElementById("publisher4").innerHTML="";
+				document.getElementById("publishedDate4").innerHTML="";
+				document.getElementById("description4").innerHTML="";
+				document.getElementById("photo4").src = "";
+				document.getElementById("id4").innerHTML="";
+				
+			}
+			if(data[5]===null)
+			{
+				document.getElementById("name5").innerHTML="";
+				document.getElementById("price5").innerHTML="";
+				document.getElementById("writer5").innerHTML="";
+				document.getElementById("publisher5").innerHTML="";
+				document.getElementById("publishedDate5").innerHTML="";
+				document.getElementById("description5").innerHTML="";
+				document.getElementById("photo5").src = "";
+				document.getElementById("id5").innerHTML="";
+				
+			}
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
 			document.getElementById("writer0").innerHTML=data[0].writer;
@@ -448,6 +519,81 @@ include_once 'includes/functions.php';
      $.post('book/search',{
 		'offset' : offset, 'category' : category, 'name' : name, 'writer' : writer, 'publisher' : publisher, 'publishedDate':publishedDate},
       function(data) {
+			if(data[0]===null)
+			{
+				document.getElementById("name0").innerHTML="";
+				document.getElementById("price0").innerHTML="";
+				document.getElementById("writer0").innerHTML="";
+				document.getElementById("publisher0").innerHTML="";
+				document.getElementById("publishedDate0").innerHTML="";
+				document.getElementById("description0").innerHTML="";
+				document.getElementById("photo0").src = "";
+				document.getElementById("id0").innerHTML="";
+				
+			}
+			if(data[1]===null)
+			{
+				document.getElementById("name1").innerHTML="";
+				document.getElementById("price1").innerHTML="";
+				document.getElementById("writer1").innerHTML="";
+				document.getElementById("publisher1").innerHTML="";
+				document.getElementById("publishedDate1").innerHTML="";
+				document.getElementById("description1").innerHTML="";
+				document.getElementById("photo1").src = "";
+				document.getElementById("id1").innerHTML="";
+				
+			}
+			if(data[2]===null)
+			{
+				document.getElementById("name2").innerHTML="";
+				document.getElementById("price2").innerHTML="";
+				document.getElementById("writer2").innerHTML="";
+				document.getElementById("publisher2").innerHTML="";
+				document.getElementById("publishedDate2").innerHTML="";
+				document.getElementById("description2").innerHTML="";
+				document.getElementById("photo2").src = "";
+				document.getElementById("id2").innerHTML="";
+				
+			}
+			if(data[3]===null)
+			{
+				document.getElementById("name3").innerHTML="";
+				document.getElementById("price3").innerHTML="";
+				document.getElementById("writer3").innerHTML="";
+				document.getElementById("publisher3").innerHTML="";
+				document.getElementById("publishedDate3").innerHTML="";
+				document.getElementById("description3").innerHTML="";
+				document.getElementById("photo3").src = "";
+				document.getElementById("id3").innerHTML="";
+				
+			}
+			if(data[4]===null)
+			{
+				document.getElementById("name4").innerHTML="";
+				document.getElementById("price4").innerHTML="";
+				document.getElementById("writer4").innerHTML="";
+				document.getElementById("publisher4").innerHTML="";
+				document.getElementById("publishedDate4").innerHTML="";
+				document.getElementById("description4").innerHTML="";
+				document.getElementById("photo4").src = "";
+				document.getElementById("id4").innerHTML="";
+				
+			}
+			if(data[5]===null)
+			{
+				document.getElementById("name5").innerHTML="";
+				document.getElementById("price5").innerHTML="";
+				document.getElementById("writer5").innerHTML="";
+				document.getElementById("publisher5").innerHTML="";
+				document.getElementById("publishedDate5").innerHTML="";
+				document.getElementById("description5").innerHTML="";
+				document.getElementById("photo5").src = "";
+				document.getElementById("id5").innerHTML="";
+				
+			}
+			
+			
+			
 			document.getElementById("name0").innerHTML=data[0].name;
 			document.getElementById("price0").innerHTML=data[0].price;
 			document.getElementById("writer0").innerHTML=data[0].writer;

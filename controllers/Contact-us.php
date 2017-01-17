@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Checkout extends CI_Controller {
+class Contact-us extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,22 +20,6 @@ class Checkout extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('checkout');
+		$this->load->view('contact-us');
 	}
-	public function loadInfo()
-	{
-		$username=$this->input->post('username');
-
-		$this->load->model('CheckoutModel');
-		$res=$this->CheckoutModel->loadInfo($username);
-	}
-	public function loadBookInfo()
-	{
-		$bookID=$this->input->post('bookID');
-
-		$this->load->model('CheckoutModel');
-		$res=$this->CheckoutModel->loadBookInfo($bookID);
-	}
-
-
 }

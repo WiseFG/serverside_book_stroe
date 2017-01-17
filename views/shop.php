@@ -110,32 +110,32 @@ include_once 'includes/functions.php';
 							
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop" id="research">پژوهشی</a></h4>
+									<h4 class="panel-title"><a href="shop" id="research" onclick=showCategory("research");>پژوهشی</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop" id="litrature">ادبیات</a></h4>
+									<h4 class="panel-title"><a href="shop" id="litrature" onclick=showCategory("litrature")>ادبیات</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop" id="kids">کودک و نوجوان</a></h4>
+									<h4 class="panel-title"><a href="shop" id="kids" onclick=showCategory("kids")>کودک و نوجوان</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop" id="history">تاریخی</a></h4>
+									<h4 class="panel-title"><a href="shop" id="history" onclick=showCategory("history")>تاریخی</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop" id="health">سلامت</a></h4>
+									<h4 class="panel-title"><a href="shop" id="health" onclick=showCategory("health")>سلامت</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="shop" id="story">رمان</a></h4>
+									<h4 class="panel-title"><a href="shop" id="story" onclick=showCategory("story")>رمان</a></h4>
 								</div>
 							</div>
 						
@@ -158,12 +158,12 @@ include_once 'includes/functions.php';
 											<img id="photo0" >
 											<h2><label id="price0"></label></h2>
 											<p><label id="name0"></label></p>
-											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart" onclick=addToCart("id0");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id0") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer0"></label></p>
 												<p>ناشر : <label id="publisher0"></label></p>
 												<p>سال چاپ : <label id="publishedDate0"></label></p>
@@ -173,7 +173,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price0"></label></h2>
 												<p><label id="name0"></label></p>
 												<label style="display: none" id="id0"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id0");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -186,12 +186,12 @@ include_once 'includes/functions.php';
 											<img id="photo1">
 											<h2><label id="price1"></label></h2>
 											<p><label id="name1"></label></p>
-											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart" onclick=addToCart("id1");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id1") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer1"></label></p>
 												<p>ناشر : <label id="publisher1"></label></p>
 												<p>سال چاپ : <label id="publishedDate1"></label></p>
@@ -201,7 +201,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price1"></label></h2>
 												<p><label id="name1"></label></p>
 												<label style="display: none" id="id1"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id1");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -214,12 +214,12 @@ include_once 'includes/functions.php';
 											<img id="photo2">
 											<h2><label id="price2"></label></h2>
 											<p><label id="name2"></label></p>
-											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart" onclick=addToCart("id2");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id2") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer2"></label></p>
 												<p>ناشر : <label id="publisher2"></label></p>
 												<p>سال چاپ : <label id="publishedDate2"></label></p>
@@ -229,7 +229,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price2"></label></h2>
 												<p><label id="name2"></label></p>
 												<label style="display: none" id="id2"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id2");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -242,12 +242,12 @@ include_once 'includes/functions.php';
 											<img id="photo3">
 											<h2><label id="price3"></label></h2>
 											<p><label id="name3"></label></p>
-											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart" onclick=addToCart("id3");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id3") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer3"></label></p>
 												<p>ناشر : <label id="publisher3"></label></p>
 												<p>سال چاپ : <label id="publishedDate3"></label></p>
@@ -257,7 +257,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price3"></label></h2>
 												<p><label id="name3"></label></p>
 												<label style="display: none" id="id3"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id3");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -270,12 +270,12 @@ include_once 'includes/functions.php';
 											<img id="photo4">
 											<h2><label id="price4"></label></h2>
 											<p><label id="name4"></label></p>
-											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart" onclick=addToCart("id4");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id4") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer4"></label></p>
 												<p>ناشر : <label id="publisher4"></label></p>
 												<p>سال چاپ : <label id="publishedDate4"></label></p>
@@ -285,7 +285,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price4"></label></h2>
 												<p><label id="name4"></label></p>
 												<label style="display: none" id="id4"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id4");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -298,12 +298,12 @@ include_once 'includes/functions.php';
 											<img id="photo5">
 											<h2><label id="price5"></label></h2>
 											<p><label id="name5"></label></p>
-											<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+											<a class="btn btn-default add-to-cart" onclick=addToCart("id5");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<div class="details">
-												<a href="product-details"><h3>توضیحات بیشتر</h3></a>
+												<a onclick=showDetails("id5") href="product_details"><h3>توضیحات بیشتر</h3></a>
 												<p>نویسنده : <label id="writer5"></label></p>
 												<p>ناشر : <label id="publisher5"></label></p>
 												<p>سال چاپ : <label id="publishedDate5"></label></p>
@@ -313,7 +313,7 @@ include_once 'includes/functions.php';
 												<h2><label id="price5"></label></h2>
 												<p><label id="name5"></label></p>
 												<label style="display: none" id="id5"></label>
-												<a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
+												<a class="btn btn-default add-to-cart" onclick=addToCart("id5");><i class="fa fa-shopping-cart"></i>اضافه کردن به سبد خرید</a>
 											</div>
 										</div>
 								</div>
@@ -399,7 +399,7 @@ include_once 'includes/functions.php';
 	
 	<script type="text/javascript">
 		var offset ;
-	   
+	  
 		window.onload = function (){
 			
 		 <?php echo json_encode(set_offset(0)); ?>;
@@ -435,12 +435,108 @@ include_once 'includes/functions.php';
     loadInfo();
 	
   }
+  function showDetails(inputId)
+	{
+		var id = document.getElementById(inputId).innerHTML;
+			
+		$.post('book/saveid',{
+		'id' : id},
+      function(data) {
+		
+		}, "json");
+		
+	}
+	function showCategory(inputCategory)
+	{
+		var category = document.getElementById(inputCategory).innerHTML;
+			
+		$.post('book/saveCategory',{
+		'category' : category},
+      function(data) {
+		
+		}, "json");
+		
+	}
   function loadInfo()
   {
-     $.post('book/loadBookGeneral',{
+     $.post('book/loadBookCategory',{
 		'offset' : offset},
       function(data) {
 		{
+			if(data[0]===null)
+			{
+				document.getElementById("name0").innerHTML="";
+				document.getElementById("price0").innerHTML="";
+				document.getElementById("writer0").innerHTML="";
+				document.getElementById("publisher0").innerHTML="";
+				document.getElementById("publishedDate0").innerHTML="";
+				document.getElementById("description0").innerHTML="";
+				document.getElementById("photo0").src = "";
+				document.getElementById("id0").innerHTML="";
+				
+			}
+			if(data[1]===null)
+			{
+				document.getElementById("name1").innerHTML="";
+				document.getElementById("price1").innerHTML="";
+				document.getElementById("writer1").innerHTML="";
+				document.getElementById("publisher1").innerHTML="";
+				document.getElementById("publishedDate1").innerHTML="";
+				document.getElementById("description1").innerHTML="";
+				document.getElementById("photo1").src = "";
+				document.getElementById("id1").innerHTML="";
+				
+			}
+			if(data[2]===null)
+			{
+				document.getElementById("name2").innerHTML="";
+				document.getElementById("price2").innerHTML="";
+				document.getElementById("writer2").innerHTML="";
+				document.getElementById("publisher2").innerHTML="";
+				document.getElementById("publishedDate2").innerHTML="";
+				document.getElementById("description2").innerHTML="";
+				document.getElementById("photo2").src = "";
+				document.getElementById("id2").innerHTML="";
+				
+			}
+			if(data[3]===null)
+			{
+				document.getElementById("name3").innerHTML="";
+				document.getElementById("price3").innerHTML="";
+				document.getElementById("writer3").innerHTML="";
+				document.getElementById("publisher3").innerHTML="";
+				document.getElementById("publishedDate3").innerHTML="";
+				document.getElementById("description3").innerHTML="";
+				document.getElementById("photo3").src = "";
+				document.getElementById("id3").innerHTML="";
+				
+			}
+			if(data[4]===null)
+			{
+				document.getElementById("name4").innerHTML="";
+				document.getElementById("price4").innerHTML="";
+				document.getElementById("writer4").innerHTML="";
+				document.getElementById("publisher4").innerHTML="";
+				document.getElementById("publishedDate4").innerHTML="";
+				document.getElementById("description4").innerHTML="";
+				document.getElementById("photo4").src = "";
+				document.getElementById("id4").innerHTML="";
+				
+			}
+			if(data[5]===null)
+			{
+				document.getElementById("name5").innerHTML="";
+				document.getElementById("price5").innerHTML="";
+				document.getElementById("writer5").innerHTML="";
+				document.getElementById("publisher5").innerHTML="";
+				document.getElementById("publishedDate5").innerHTML="";
+				document.getElementById("description5").innerHTML="";
+				document.getElementById("photo5").src = "";
+				document.getElementById("id5").innerHTML="";
+				
+			}
+			
+			
 			document.getElementById("currentPage").innerHTML= offset+1;
 			
 			document.getElementById("name0").innerHTML=data[0].name;
@@ -518,7 +614,50 @@ include_once 'includes/functions.php';
 	}
 	loadInfo();
   }
-  
+   function track()
+    {
+    	var invoiceID = document.getElementById("invoiceID").value;
+      
+    	if((invoiceID!=""))
+    	{
+        
+        	$.post('home/track', {
+        	'invoiceID' : invoiceID},
+         	function(data) {  
+         		if(data != null)
+         		{ 
+         			var place = document.getElementById("place");
+         			var status = document.getElementById("status");
+
+         			place.innerHTML=data[0].place;
+         			status.innerHTML=data[0].status;
+
+         			place.style.display="block";
+         			status.style.display="block";
+         		}
+
+        	}, "json");
+        
+    	
+    	}
+    }
+function addToCart(input){
+  		
+		 var username=<?php echo json_encode(get_username()); ?> ;
+        
+       var userid=<?php echo json_encode(get_userId()); ?> ;
+
+  		var inputId = document.getElementById(input).innerHTML;
+		 $.post('cart/insert', {
+      'userid' : userid ,'bookId':inputId},
+      function(data) {
+      /*document.getElementById("changed_name").value=data[0].name;
+      document.getElementById("changed_last_name").value=data[0].fname;
+      document.getElementById("changed_address").value=data[0].address;
+      document.getElementById("changed_email").value=data[0].email;
+      document.getElementById("changed_tel").value=data[0].phoneNumber;*/
+     }, "json");
+	 }
   </script>
 
 

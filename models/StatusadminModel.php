@@ -10,8 +10,7 @@ class StatusadminModel extends CI_Model
 	function loadInvoiceID()
 	{
 		$zero=0;
-		$sql = "SELECT id FROM `invoice`
-			 WHERE `delivered` =".$zero ;
+		$sql = "SELECT id FROM `cart`";
     	$result = $this->db->query($sql);
     	$i = 0;
 
@@ -27,9 +26,9 @@ class StatusadminModel extends CI_Model
 	
 	function loadInfo($invoiceID)
 	{
-		$sql1 = "SELECT bookId, counter FROM `invoicerow` join
-		`book` ON (`invoicerow`.`bookid`=`book`.`id`) 
-			 WHERE `invoiceId` =". $invoiceID;
+		$sql1 = "SELECT bookId,`cartrow`.counter FROM `cartrow` join
+		`book` ON (`cartrow`.`bookid`=`book`.`id`) 
+			 WHERE `cartId` =". $invoiceID;
     	$result = $this->db->query($sql1);
     	$post= array();
     	$i = 0;
@@ -80,7 +79,7 @@ class StatusadminModel extends CI_Model
     function updateInfo($place,$status,$invoiceID)
     {
         $new_id = (int)$invoiceID;
-        $sql="UPDATE invoice SET  place = '".$place."' ,sts = '".$status."' WHERE id=" .$new_id; 
+        $sql="UPDATE cart SET  place = '".$place."' ,sts = '".$status."' WHERE id=" .$new_id; 
         $result = $this->db->query($sql);
     }
 }

@@ -28,14 +28,6 @@ class Book extends CI_Controller {
 		$this->load->model('bookModel');
 		$res=$this->bookModel->loadBookGeneral($offset);
 	}
-	public function loadBookCategory()
-	{
-		$offset=$this->input->post('offset');
-		$category=$this->input->post('category');
-		
-		$this->load->model('bookModel');
-		$res=$this->bookModel->loadBookCategory($category, $offset);
-	}
 	public function saveid()
 	{
 		$id=$this->input->post('id');
@@ -44,10 +36,24 @@ class Book extends CI_Controller {
 		$this->load->view('product_details');
 		
 	}
+	public function saveCategory()
+	{
+		$category=$this->input->post('category');
+		$this->load->model('bookModel');
+		$res=$this->bookModel->addCategory($category);
+		$this->load->view('shop');
+		
+	}
 	public function loadBookId()
-	{	
+	{
 		$this->load->model('bookModel');
 		$res=$this->bookModel->loadBookId();
+	}
+	public function loadBookCategory()
+	{
+		$offset=$this->input->post('offset');	
+		$this->load->model('bookModel');
+		$res=$this->bookModel->loadBookCategory($offset);
 	}
 	public function search()
 	{

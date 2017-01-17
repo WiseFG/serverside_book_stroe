@@ -28,13 +28,30 @@ class bookModel extends CI_Model
     	echo json_encode($post);
     
 	}
-	function loadBookCategory($category, $offset)
+	function loadBookCategory($offset)
 	{
 		$i=0;
-		$sql = "SELECT * FROM `book` 
-			 WHERE `category` = '". $category ."'
-			 LIMIT 6 OFFSET ".$offset ;
-		$result = $this->db->query($sql);
+		$info = "SELECT givenCategory FROM `categoryInformation`";
+		$result2 = $this->db->query($info);
+		$id=array();
+		foreach($result2->result() as $rows)
+		{
+			$id[0]["givenCategory"] = $rows->givenCategory;
+			break;
+		}
+		$sql="";
+		$result="";
+		if($id==null)
+		{
+			$sql = "SELECT * FROM `book` LIMIT 6 OFFSET ".$offset ;
+			$result = $this->db->query($sql);
+		}
+		else
+		{
+			$sql = "SELECT * FROM `book` 
+				 WHERE category = '". $id[0]["givenCategory"]."'";
+			$result = $this->db->query($sql);
+		}
 		$post=array();
 		foreach($result->result() as $rows)
 		{
@@ -48,9 +65,10 @@ class bookModel extends CI_Model
 			$post[$i]["photo"] = $rows->photo;
 			$post[$i]["category"] = $rows->category;
 			$post[$i]["id"] = $rows->id;
-			
 			$i++;
 		}
+		$info2 = "TRUNCATE TABLE `categoryInformation` ";
+		$this->db->query($info2);
     	echo json_encode($post);
     
 	}
@@ -189,10 +207,17 @@ class bookModel extends CI_Model
 	}
 	function track($invoiceID)
 	{
-		$sql = "SELECT * FROM `invoice`
+		$sql = "SELECT * FROM `cart`
 			 WHERE `id` =". (int)$invoiceID;
     	$result = $this->db->query($sql);
-    	echo json_encode( $result->result());
+		$post=array();
+		foreach($result->result() as $rows)
+		{
+			$post[0]["sts"] = $rows->sts;
+			$post[0]["place"] = $rows->place;
+			break;
+		}
+    	echo json_encode($post);
 	}
 
 	

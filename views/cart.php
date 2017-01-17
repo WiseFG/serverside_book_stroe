@@ -97,10 +97,10 @@ include_once 'includes/functions.php';
                 <div class="row">
                     
                     <div class="col-sm-9 padding-right" >
-                        <div class="features_items" id="tableInvoiceDetail" style="direction:rtl;"> <!--features_items-->
+                        <div class="features_items"  style="direction:rtl;"> <!--features_items-->
                             <h2 class="title text-center">سبد خرید</h2>
                             
-                            <div class="table-responsive cart_info" style="direction: rtl;">
+                            <div id="tableCartDetail" class="table-responsive cart_info" style="direction: rtl;">
                                 <table class="table table-condensed"}>
                                     <thead>
                                         <tr class="cart_menu" align="center">
@@ -148,8 +148,8 @@ include_once 'includes/functions.php';
 							<li style="direction: rtl;">رایگان<span>هزینه حمل و نقل</span></li>
 							<li style="direction: rtl;">۶۰۰۰۰ تومان<span>مجموع</span></li>
 						</ul>
-							<a class="btn btn-default check_out" href="" style="width: 100px;margin-left:190px;" >بررسی</a>
-                            <a class="btn btn-default update" href="" style="width: 100px">بروزرسانی</a>
+							<a class="btn btn-default check_out" href="checkout" style="width: 100px;margin-left:190px;" >تایید</a>
+                       
 					</div>
 				</div>
 			</div>
@@ -183,9 +183,11 @@ include_once 'includes/functions.php';
 </footer><!--/Footer-->
 <script type="text/javascript">
     
+         var username=<?php echo json_encode(get_username()); ?> 
+
 window.onload=function()
 {
-    document.getElementById("totalTable").style.display="none";
+    //document.getElementById("totalTable").style.display="none";
     loadData();
 
 
@@ -200,12 +202,10 @@ function loadData()
       document.getElementById("changed_address").value=data[0].address;
       document.getElementById("changed_email").value=data[0].email;
       document.getElementById("changed_tel").value=data[0].phoneNumber;*/
-    var table_invoice = document.getElementById("tableInvoiceDetail");
 
         for(var i=0; i<data.length; i++)
         {
             //var row = document.createElement('tr');
-            
             var name = data[i].name;
             var writer = data[i].writer;
             var category = data[i].category;
@@ -213,13 +213,11 @@ function loadData()
             var publisher = data[i].publisher;
             var price = data[i].price;
             var counter = data[i].counter;
-            var place;
-            var sts;
+            var total = price*counter;
+            var newRow = "<tr align=\"center\"><td style=\" padding-right:190px; margin-left: 200px;\"  class=\"cart_product\"><a>" + name + "</a></td> <td c style=\"padding-right: 30px;\" class=\"cart_description\"><p>نام نویسنده: " + writer+ "</p><p>دسته بندی: " + writer + "</p><p>سال انتشار: " + publishedDate + "</p><p>ناشر: " + publisher + "</p></td><td style=\"padding-right: 180px;\" class=\"cart_price\"><p>" + price + " تومان" + "</p></td><td style=\"padding-right:140px;\" class=\"cart_quantity\"><div class=\"cart_quantity_button\"><input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value= " + counter + " size=\"2\"></div></td><td style=\"padding-right:115px;\" class=\"cart_total\"><p class=\"cart_total_price\">" + total + " تومان"+ "</p></td></tr>";
 
-            var newRowContent = "<tr align=\"center\"><td style=\" padding-right:190px; margin-left: 200px;\"  class=\"cart_product\"><a>" + name + "</a></td> <td c style=\"padding-right: 30px;\" lass=\"cart_description\"><p>نام نویسنده: " + writer+ "</p><p>دسته بندی: " + writer + "</p><p>سال انتشار: " + publishedDate + "</p><p>ناشر: " + publisher + "</p></td><td style=\"padding-right: 180px;\" class=\"cart_price\"><p>" + price + " تومان" + "</p></td><td style=\"padding-right:140px;\" class=\"cart_quantity\"><div class=\"cart_quantity_button\"><input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value= " + counter + " size=\"2\"></div></td><td style=\"padding-right:115px;\" class=\"cart_total\"><p class=\"cart_total_price\">" + total + " تومان"+ "</p></td></tr>";
-
-        $(newRowContent).appendTo($("#tableInvoiceDetail")); 
-    }
+            $(newRow).appendTo($("#tableCartDetail"));  
+        }
      }, "json");
    
 }

@@ -35,10 +35,10 @@ class CartModel extends CI_Model
 	{
 
 		 $sql = "SELECT * from user INNER JOIN cart on `user`.`id` = `cart`.`userId` INNER join cartrow on `cartrow`.`cartId`=`cart`.`id` INNER JOIN `book` ON
-		`book`.`id` = `cartrow`.`bookId` WHERE `user`.`username` = ". $user;
+		`book`.`id` = `cartrow`.`bookId` WHERE `user`.`username` = '".$user."'";
     	
-		$result = $this->db->query($sql1);
-
+		$result = $this->db->query($sql);
+		$post = array();
     	$i = 0;
     	foreach($result->result() as $rows)
     	{
